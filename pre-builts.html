@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#fff;overflow-x:hidden;}
+:root{
+  --cyan:#00f0ff;--magenta:#ff00ff;--blue:#4d4dff;
+  --bg1:#0a0a0f;--bg2:#12121a;--bg3:#1a1a25;
+  --text2:#a0a0b0;--text3:#606070;
+}
+
+/* NAVBAR */
+nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.95);border-bottom:1px solid rgba(0,240,255,0.12);backdrop-filter:blur(10px);}
+.logo{display:flex;align-items:baseline;gap:2px;}
+.logo-rig{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,#00f0ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.logo-storm{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#a0a0b0;}
+.logo-labs{font-family:'Rajdhani',sans-serif;font-size:0.75rem;letter-spacing:0.4em;color:#606070;margin-left:6px;align-self:center;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:#a0a0b0;text-decoration:none;font-size:0.875rem;letter-spacing:0.05em;transition:color 0.2s;cursor:pointer;}
+.nav-links a:hover{color:#00f0ff;}
+
+/* CONTENT */
+.container{max-width:1200px;margin:0 auto;padding:3rem 2rem;}
+.page-title{font-family:'Orbitron',monospace;font-size:2.5rem;font-weight:900;margin-bottom:3rem;background:linear-gradient(135deg,#00f0ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.builds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-bottom:3rem;}
+.build-card{background:rgba(20,20,30,0.8);border:1px solid rgba(0,240,255,0.1);padding:2rem;position:relative;transition:transform 0.3s,border-color 0.3s;}
+.build-card:hover{transform:translateY(-8px);border-color:rgba(0,240,255,0.4);}
+.build-card h3{font-family:'Orbitron',monospace;font-size:1.3rem;margin-bottom:1rem;color:#00f0ff;}
+.build-card .tier{font-size:0.75rem;color:#606070;letter-spacing:0.1em;margin-bottom:0.5rem;}
+.build-card .price{font-family:'Orbitron',monospace;font-size:1.5rem;font-weight:700;color:#00f0ff;margin:1rem 0;}
+.build-specs{list-style:none;margin:1.5rem 0;}
+.build-specs li{padding:0.5rem 0;color:#a0a0b0;font-size:0.9rem;border-bottom:1px solid rgba(0,240,255,0.1);}
+.build-specs li::before{content:'✓ ';color:#00f0ff;margin-right:0.5rem;}
+.cta-btn{display:inline-block;margin-top:1.5rem;padding:0.8rem 1.5rem;background:linear-gradient(135deg,#00f0ff,#4d4dff);color:#000;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:0.1em;cursor:pointer;border:none;transition:transform 0.3s;text-decoration:none;}
+.cta-btn:hover{transform:scale(1.05);}
+
+/* FOOTER */
+footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 2rem 1.5rem;margin-top:5rem;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:1.5rem;text-align:center;}
+.footer-bottom p{font-size:0.75rem;color:#606070;}
+</style>
+
+<nav>
+  <div class="logo">
+    <span class="logo-rig">RIG</span><span class="logo-storm">STORM</span>
+    <span class="logo-labs">LABS</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pre-builts.html">Pre-Builts</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">PRE-BUILT SYSTEMS</h1>
+  <div class="builds-grid">
+    <div class="build-card">
+      <div class="tier">ENTRY TIER</div>
+      <h3>StormCore Lite</h3>
+      <div class="price">₹44,999</div>
+      <ul class="build-specs">
+        <li>AMD Ryzen 3 5100</li>
+        <li>RX 6500 4GB</li>
+        <li>8GB DDR4-3200</li>
+        <li>256GB NVMe SSD</li>
+        <li>500W PSU</li>
+      </ul>
+      <a href="../build-custom.html" class="cta-btn">CUSTOMIZE</a>
+    </div>
+
+    <div class="build-card">
+      <div class="tier">MID TIER</div>
+      <h3>StormCore King</h3>
+      <div class="price">₹66,999</div>
+      <ul class="build-specs">
+        <li>AMD Ryzen 5 5500</li>
+        <li>RX 7600 8GB</li>
+        <li>16GB DDR4-3200</li>
+        <li>512GB NVMe SSD</li>
+        <li>650W PSU</li>
+      </ul>
+      <a href="../build-custom.html" class="cta-btn">CUSTOMIZE</a>
+    </div>
+
+    <div class="build-card">
+      <div class="tier">HIGH TIER</div>
+      <h3>StormCore Ultra</h3>
+      <div class="price">₹124,999</div>
+      <ul class="build-specs">
+        <li>AMD Ryzen 7 5700X</li>
+        <li>RTX 4070 12GB</li>
+        <li>32GB DDR4-3600</li>
+        <li>1TB NVMe SSD</li>
+        <li>850W PSU</li>
+      </ul>
+      <a href="../build-custom.html" class="cta-btn">CUSTOMIZE</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 Rigstorm Labs. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
