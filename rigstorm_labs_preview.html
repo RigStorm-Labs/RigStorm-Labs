@@ -14,7 +14,7 @@ body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#fff;overflow-x:hid
 .heading{font-family:'Rajdhani',sans-serif;}
 
 /* NAVBAR */
-nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.95);border-bottom:1px solid rgba(0,240,255,0.12);backdrop-filter:blur(20px);}
+nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.95);border-bottom:1px solid rgba(0,240,255,0.12);backdrop-filter:blur(10px);}
 .logo{display:flex;align-items:baseline;gap:2px;}
 .logo-rig{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,#00f0ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .logo-storm{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#a0a0b0;}
@@ -43,7 +43,7 @@ nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items
 /* PRODUCTS */
 .section{padding:5rem 2rem;max-width:1400px;margin:0 auto;}
 .section-header{text-align:center;margin-bottom:3rem;}
-.section-header h2{font-family:'Orbitron',monospace;font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;background:linear-gradient(135deg,#00f0ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem;}
+.section-header h2{font-family:'Orbitron',monospace;font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;background:linear-gradient(135deg,#00f0ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .section-header p{color:#a0a0b0;}
 .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
 .product-card{background:rgba(20,20,30,0.8);border:1px solid rgba(0,240,255,0.1);padding:0;overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;}
@@ -60,6 +60,8 @@ nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items
 .spec{font-size:0.75rem;color:#a0a0b0;display:flex;gap:6px;}
 .spec::before{content:'▸';color:#00f0ff;flex-shrink:0;}
 .card-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(0,240,255,0.1);padding-top:1rem;}
+.price-container{display:flex;align-items:center;gap:0.75rem;}
+.price-original{font-family:'Orbitron',monospace;font-size:0.9rem;color:#606070;text-decoration:line-through;}
 .price{font-family:'Orbitron',monospace;font-size:1.25rem;font-weight:700;color:#00f0ff;}
 .buy-btn{padding:0.4rem 1rem;background:linear-gradient(135deg,#00f0ff,#4d4dff);color:#000;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.1em;cursor:pointer;border:none;transition:transform 0.2s;}
 .buy-btn:hover{transform:scale(1.05);}
@@ -83,7 +85,7 @@ nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items
 .review-text{font-size:0.875rem;color:#a0a0b0;line-height:1.7;margin-bottom:1rem;font-style:italic;}
 .review-text::before{content:'"';font-family:'Orbitron',monospace;font-size:2rem;color:rgba(0,240,255,0.2);line-height:1;float:left;margin-right:8px;}
 .reviewer{display:flex;align-items:center;gap:10px;}
-.reviewer-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#00f0ff,#ff00ff);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#000;font-family:'Orbitron',monospace;}
+.reviewer-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#00f0ff,#ff00ff);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#000;}
 .reviewer-name{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.9rem;}
 .reviewer-tag{font-size:0.7rem;color:#606070;}
 
@@ -149,54 +151,20 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
         <div class="product-img"><div style="font-size:3.5rem;">🖥</div></div>
         <div class="card-body">
           <div class="card-tier">ENTRY TIER</div>
-          <div class="card-name">STORM X1</div>
+          <div class="card-name">StormCore King</div>
           <div class="card-specs">
-            <div class="spec">AMD Ryzen 5 7600X</div>
-            <div class="spec">RTX 4060 8GB</div>
-            <div class="spec">16GB DDR5 RAM</div>
-            <div class="spec">1TB NVMe SSD</div>
+            <div class="spec">AMD Ryzen 5 5500</div>
+            <div class="spec">RX 7600 8GB</div>
+            <div class="spec">16GB DDR4-3200</div>
+            <div class="spec">512GB NVMe SSD</div>
+            <div class="spec">650W PSU</div>
+            <div class="spec">ANT eSports Crystal Z2 Case</div>
           </div>
           <div class="card-footer">
-            <div class="price">$999</div>
-            <button class="buy-btn">BUY NOW</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card" style="border-color:rgba(0,240,255,0.25);">
-        <div class="card-glow"></div>
-        <div class="product-img" style="background:linear-gradient(135deg,rgba(0,240,255,0.1),rgba(255,0,255,0.1));">
-          <div style="font-size:3.5rem;">🖥</div>
-          <div class="badge-new">BEST SELLER</div>
-        </div>
-        <div class="card-body">
-          <div class="card-tier">ELITE TIER</div>
-          <div class="card-name">STORM X3 PRO</div>
-          <div class="card-specs">
-            <div class="spec">AMD Ryzen 9 7900X</div>
-            <div class="spec">RTX 4080 16GB</div>
-            <div class="spec">32GB DDR5 RAM</div>
-            <div class="spec">2TB NVMe SSD</div>
-          </div>
-          <div class="card-footer">
-            <div class="price">$2,299</div>
-            <button class="buy-btn">BUY NOW</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="card-glow"></div>
-        <div class="product-img"><div style="font-size:3.5rem;">🖥</div></div>
-        <div class="card-body">
-          <div class="card-tier">ULTIMATE TIER</div>
-          <div class="card-name">STORM X5 ULTRA</div>
-          <div class="card-specs">
-            <div class="spec">Intel Core i9-14900K</div>
-            <div class="spec">RTX 4090 24GB</div>
-            <div class="spec">64GB DDR5 RAM</div>
-            <div class="spec">4TB NVMe SSD</div>
-          </div>
-          <div class="card-footer">
-            <div class="price">$4,499</div>
+            <div class="price-container">
+              <div class="price-original">₹82,999</div>
+              <div class="price">₹66,999</div>
+            </div>
             <button class="buy-btn">BUY NOW</button>
           </div>
         </div>
@@ -251,7 +219,7 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
       <div class="review-text">This machine handles everything I throw at it. 240fps in competitive, 4K60 in everything else. Rigstorm delivered exactly what they promised.</div>
       <div class="reviewer">
         <div class="reviewer-avatar">AK</div>
-        <div><div class="reviewer-name">Alex K.</div><div class="reviewer-tag">Pro Streamer · Storm X3 Pro</div></div>
+        <div><div class="reviewer-name">Alex K.</div><div class="reviewer-tag">Pro Streamer · StormCore King</div></div>
       </div>
     </div>
     <div class="review-card">
@@ -259,7 +227,7 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
       <div class="review-text">The build quality is insane. Cable management is clean, temps are low, and it looks incredible in my setup. Worth every penny.</div>
       <div class="reviewer">
         <div class="reviewer-avatar">MR</div>
-        <div><div class="reviewer-name">Maya R.</div><div class="reviewer-tag">Content Creator · Storm X5 Ultra</div></div>
+        <div><div class="reviewer-name">Maya R.</div><div class="reviewer-tag">Content Creator · StormCore King</div></div>
       </div>
     </div>
     <div class="review-card">
@@ -267,7 +235,7 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
       <div class="review-text">Coming from a DIY build, I was skeptical. But this thing is faster, quieter, and more reliable. Rigstorm's support team is also top tier.</div>
       <div class="reviewer">
         <div class="reviewer-avatar">JT</div>
-        <div><div class="reviewer-name">James T.</div><div class="reviewer-tag">Competitive Gamer · Storm X1</div></div>
+        <div><div class="reviewer-name">James T.</div><div class="reviewer-tag">Competitive Gamer · StormCore King</div></div>
       </div>
     </div>
   </div>
@@ -283,9 +251,7 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
       <div class="footer-col">
         <h4>PRODUCTS</h4>
         <ul>
-          <li><a href="#">Storm X1</a></li>
-          <li><a href="#">Storm X3 Pro</a></li>
-          <li><a href="#">Storm X5 Ultra</a></li>
+          <li><a href="#">StormCore King</a></li>
           <li><a href="#">Accessories</a></li>
         </ul>
       </div>
