@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Inter',sans-serif; background:#0a0a0f; color:#fff; overflow-x:hidden;}
+    :root {
+      --cyan:#00f0ff; --magenta:#ff00ff; --blue:#4d4dff;
+      --bg1:#0a0a0f; --bg2:#12121a; --bg3:#1a1a25;
+      --text2:#a0a0b0; --text3:#606070;
+    }
+    
+    nav {position:sticky; top:0; z-index:100; padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; background:rgba(10,10,15,0.95); border-bottom:1px solid rgba(0,240,255,0.12); backdrop-filter:blur(10px);}
+    .logo {display:flex; align-items:baseline; gap:2px;}
+    .logo-rig {font-family:'Orbitron',monospace; font-size:1.2rem; font-weight:900; background:linear-gradient(135deg,#00f0ff,#ff00ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;}
+    .logo-storm {font-family:'Orbitron',monospace; font-size:1.2rem; font-weight:900; color:#a0a0b0;}
+    .logo-labs {font-family:'Rajdhani',sans-serif; font-size:0.75rem; letter-spacing:0.4em; color:#606070; margin-left:6px; align-self:center;}
+    .nav-links {display:flex; gap:2rem; list-style:none;}
+    .nav-links a {color:#a0a0b0; text-decoration:none; font-size:0.875rem; letter-spacing:0.05em; transition:color 0.2s; cursor:pointer;}
+    .nav-links a:hover {color:#00f0ff;}
+    
+    .container {max-width:800px; margin:0 auto; padding:3rem 2rem;}
+    .page-title {font-family:'Orbitron',monospace; font-size:2rem; font-weight:900; margin-bottom:2rem; background:linear-gradient(135deg,#00f0ff,#ff00ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;}
+    
+    .checkout-section {background:rgba(20,20,30,0.8); border:1px solid rgba(0,240,255,0.1); padding:2rem; margin-bottom:2rem; border-radius:4px;}
+    .section-title {font-family:'Orbitron',monospace; font-size:1.2rem; color:#00f0ff; margin-bottom:1.5rem; border-bottom:2px solid rgba(0,240,255,0.2); padding-bottom:1rem;}
+    
+    .form-group {margin-bottom:1.5rem;}
+    .form-group label {display:block; margin-bottom:0.5rem; color:#a0a0b0; font-weight:600; font-size:0.9rem;}
+    .form-group input, .form-group select, .form-group textarea {width:100%; padding:0.8rem; background:rgba(18,18,26,0.8); border:1px solid rgba(0,240,255,0.2); color:#fff; font-family:inherit; border-radius:4px; transition:border-color 0.2s;}
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {outline:none; border-color:rgba(0,240,255,0.6);}
+    
+    .form-row {display:grid; grid-template-columns:1fr 1fr; gap:1rem;}
+    .form-row .form-group {margin-bottom:0;}
+    
+    .product-info {background:rgba(18,18,26,0.6); padding:1.5rem; border-left:3px solid #00f0ff; margin-bottom:1.5rem;}
+    .product-info h3 {color:#00f0ff; margin-bottom:0.5rem;}
+    .product-info p {color:#a0a0b0; margin:0.3rem 0;}
+    
+    .payment-methods {display:flex; gap:1rem; margin-bottom:1.5rem;}
+    .payment-option {flex:1; padding:1rem; border:2px solid rgba(0,240,255,0.2); cursor:pointer; border-radius:4px; text-align:center; transition:all 0.3s;}
+    .payment-option input[type="radio"] {display:none;}
+    .payment-option.active {border-color:#00f0ff; background:rgba(0,240,255,0.05);}
+    .payment-option label {cursor:pointer; color:#a0a0b0; font-weight:500;}
+    .payment-option.active label {color:#00f0ff; font-weight:bold;}
+    
+    .payment-instructions {background:rgba(0,240,255,0.05); border-left:3px solid #00f0ff; padding:1.5rem; margin-top:1.5rem; display:none;}
+    .payment-instructions.active {display:block;}
+    .payment-instructions h4 {color:#00f0ff; margin-bottom:1rem;}
+    .payment-instructions p {color:#a0a0b0; line-height:1.6; margin-bottom:0.5rem;}
+    
+    .btn-checkout {padding:1rem 2rem; background:linear-gradient(135deg,#00f0ff,#4d4dff); color:#000; font-family:'Rajdhani',sans-serif; font-weight:700; letter-spacing:0.1em; cursor:pointer; border:none; border-radius:4px; transition:transform 0.3s; font-size:1rem; width:100%;}
+    .btn-checkout:hover {transform:scale(1.05);}
+    .btn-checkout:disabled {opacity:0.5; cursor:not-allowed; transform:scale(1);}
+    
+    .error-message {color:#ff4444; font-size:0.85rem; margin-top:0.5rem;}
+    .success-message {color:#00ff00; font-size:0.85rem; margin-top:0.5rem;}
+    
+    footer {background:#060609; border-top:1px solid rgba(0,240,255,0.1); padding:2rem; margin-top:3rem; text-align:center;}
+    footer p {font-size:0.75rem; color:#606070;}
+
+    @media (max-width: 600px) {
+      .form-row {grid-template-columns:1fr;}
+      .container {padding:2rem 1rem;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <span class="logo-rig">RIG</span><span class="logo-storm">STORM</span>
+    <span class="logo-labs">LABS</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pre-builts.html">Pre-Builts</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">CHECKOUT</h1>
+  
+  <div class="checkout-section">
+    <div class="section-title">Order Summary</div>
+    <div class="product-info">
+      <h3 id="productName">StormCore King</h3>
+      <p id="productPrice">Price: ₹66,999</p>
+      <p id="productDesc">MID TIER - AMD Ryzen 5 5500, RX 7600 8GB, 16GB DDR4, 512GB SSD, 650W PSU</p>
+    </div>
+  </div>
+  
+  <form id="checkoutForm">
+    <div class="checkout-section">
+      <div class="section-title">Billing Information</div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name *</label>
+          <input type="text" id="firstName" name="firstName" required>
+          <span class="error-message" id="firstNameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name *</label>
+          <input type="text" id="lastName" name="lastName" required>
+          <span class="error-message" id="lastNameError"></span>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error-message" id="emailError"></span>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91..." required>
+        <span class="error-message" id="phoneError"></span>
+      </div>
+      
+      <div class="form-group">
+        <label for="address">Delivery Address *</label>
+        <textarea id="address" name="address" rows="3" placeholder="Street address, city, state, PIN code" required></textarea>
+        <span class="error-message" id="addressError"></span>
+      </div>
+    </div>
+    
+    <div class="checkout-section">
+      <div class="section-title">Payment Method</div>
+      
+      <div class="payment-methods">
+        <div class="payment-option active" onclick="selectPayment('prepaid-cash', this)">
+          <input type="radio" id="prepaid-cash" name="paymentMethod" value="prepaid-cash" checked>
+          <label for="prepaid-cash">💵 Pre-Paid Cash</label>
+        </div>
+      </div>
+      
+      <div class="payment-instructions active" id="prepaid-instructions">
+        <h4>Pre-Paid Cash Payment</h4>
+        <p><strong>Steps to complete your order:</strong></p>
+        <p>1. Click "Complete Order" to generate your order confirmation</p>
+        <p>2. You will receive an order reference number and payment details</p>
+        <p>3. Transfer the amount to the bank account provided in your confirmation email</p>
+        <p>4. Your order will be confirmed within 24 hours of payment verification</p>
+        <p style="margin-top:1rem; color:#ffaa00;"><strong>⚠ Note:</strong> Your order is reserved for 48 hours. Complete payment within this period to confirm.</p>
+      </div>
+      
+      <button type="submit" class="btn-checkout" style="margin-top:2rem;">Complete Order</button>
+    </div>
+  </form>
+</div>
+
+<footer>
+  <p>© 2026 Rigstorm Labs. All rights reserved.</p>
+</footer>
+
+<script>
+function getProductFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    id: params.get('id') || 'stormcore-king',
+    name: params.get('name') || 'StormCore King',
+    price: params.get('price') || '66999',
+    tier: params.get('tier') || 'MID TIER',
+    specs: params.get('specs') || 'AMD Ryzen 5 5500, RX 7600 8GB, 16GB DDR4-3200, 512GB NVMe SSD, 650W PSU'
+  };
+}
+
+function initCheckout() {
+  const product = getProductFromUrl();
+  document.getElementById('productName').textContent = product.name;
+  document.getElementById('productPrice').textContent = `Price: ₹${parseInt(product.price).toLocaleString('en-IN')}`;
+  document.getElementById('productDesc').textContent = `${product.tier} - ${product.specs}`;
+}
+
+function selectPayment(method, element) {
+  document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
+  element.classList.add('active');
+  document.getElementById(method).checked = true;
+}
+
+function validateForm() {
+  let isValid = true;
+  const fields = ['firstName', 'lastName', 'email', 'phone', 'address'];
+  
+  fields.forEach(field => {
+    const input = document.getElementById(field);
+    const error = document.getElementById(field + 'Error');
+    
+    if (!input.value.trim()) {
+      error.textContent = 'This field is required';
+      isValid = false;
+    } else {
+      error.textContent = '';
+    }
+  });
+  
+  const email = document.getElementById('email');
+  if (email.value && !email.value.includes('@')) {
+    document.getElementById('emailError').textContent = 'Invalid email address';
+    isValid = false;
+  }
+  
+  const phone = document.getElementById('phone');
+  if (phone.value && phone.value.replace(/\D/g, '').length < 10) {
+    document.getElementById('phoneError').textContent = 'Phone number must be at least 10 digits';
+    isValid = false;
+  }
+  
+  return isValid;
+}
+
+function generateOrderId() {
+  const timestamp = Date.now().toString(36).toUpperCase();
+  const random = Math.random().toString(36).substring(2, 8).toUpperCase();
+  return `ORD-${timestamp}-${random}`;
+}
+
+document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  if (!validateForm()) {
+    return;
+  }
+  
+  const product = getProductFromUrl();
+  const orderId = generateOrderId();
+  
+  const orderData = {
+    orderId: orderId,
+    product: product,
+    customer: {
+      firstName: document.getElementById('firstName').value,
+      lastName: document.getElementById('lastName').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      address: document.getElementById('address').value
+    },
+    paymentMethod: 'prepaid-cash',
+    amount: product.price,
+    status: 'pending',
+    createdAt: new Date().toISOString()
+  };
+  
+  let orders = JSON.parse(localStorage.getItem('rigstorm_orders')) || [];
+  orders.push(orderData);
+  localStorage.setItem('rigstorm_orders', JSON.stringify(orders));
+  
+  window.location.href = `order-confirmation.html?orderId=${orderId}`;
+});
+
+window.addEventListener('DOMContentLoaded', initCheckout);
+</script>
+
+</body>
+</html>

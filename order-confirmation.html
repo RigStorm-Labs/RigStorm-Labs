@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Inter',sans-serif; background:#0a0a0f; color:#fff; overflow-x:hidden;}
+    
+    nav {position:sticky; top:0; z-index:100; padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; background:rgba(10,10,15,0.95); border-bottom:1px solid rgba(0,240,255,0.12); backdrop-filter:blur(10px);}
+    .logo {display:flex; align-items:baseline; gap:2px;}
+    .logo-rig {font-family:'Orbitron',monospace; font-size:1.2rem; font-weight:900; background:linear-gradient(135deg,#00f0ff,#ff00ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;}
+    .logo-storm {font-family:'Orbitron',monospace; font-size:1.2rem; font-weight:900; color:#a0a0b0;}
+    .logo-labs {font-family:'Rajdhani',sans-serif; font-size:0.75rem; letter-spacing:0.4em; color:#606070; margin-left:6px;}
+    
+    .container {max-width:700px; margin:0 auto; padding:3rem 2rem;}
+    .success-box {background:rgba(0,255,0,0.08); border:2px solid #00ff00; padding:2rem; border-radius:4px; text-align:center; margin-bottom:2rem;}
+    .success-icon {font-size:3rem; margin-bottom:1rem;}
+    .success-box h1 {color:#00ff00; margin-bottom:1rem; font-family:'Orbitron',monospace;}
+    
+    .order-details {background:rgba(20,20,30,0.8); border:1px solid rgba(0,240,255,0.2); padding:2rem; margin-bottom:2rem; border-radius:4px;}
+    .detail-row {display:grid; grid-template-columns:150px 1fr; gap:1rem; margin-bottom:1rem; padding-bottom:1rem; border-bottom:1px solid rgba(0,240,255,0.1);}
+    .detail-row:last-child {border-bottom:none;}
+    .detail-label {color:#00f0ff; font-weight:600; font-family:'Rajdhani',sans-serif;}
+    .detail-value {color:#a0a0b0;}
+    
+    .payment-details {background:rgba(255,170,0,0.08); border-left:3px solid #ffaa00; padding:1.5rem; margin:2rem 0; border-radius:4px;}
+    .payment-details h3 {color:#ffaa00; margin-bottom:1rem; font-family:'Rajdhani',sans-serif;}
+    .payment-details p {color:#a0a0b0; line-height:1.8; margin-bottom:0.5rem;}
+    .bank-info {background:rgba(18,18,26,0.6); padding:1rem; margin:1rem 0; border-left:2px solid #00f0ff; border-radius:2px;}
+    .bank-info strong {color:#00f0ff;}
+    
+    .support-box {background:rgba(0,240,255,0.05); padding:1.5rem; border-radius:4px; margin-top:2rem; border:1px solid rgba(0,240,255,0.1);}
+    .support-box p {color:#a0a0b0; line-height:1.8; margin-bottom:0.5rem;}
+    
+    .btn-home {display:inline-block; padding:0.8rem 2rem; background:linear-gradient(135deg,#00f0ff,#4d4dff); color:#000; font-family:'Rajdhani',sans-serif; font-weight:700; text-decoration:none; border-radius:4px; margin-top:1.5rem; text-align:center;}
+    .btn-home:hover {transform:scale(1.05); transition:transform 0.3s;}
+    
+    footer {background:#060609; border-top:1px solid rgba(0,240,255,0.1); padding:2rem; margin-top:3rem; text-align:center;}
+    footer p {font-size:0.75rem; color:#606070;}
+
+    .highlight {color:#ffaa00; font-weight:bold;}
+
+    @media (max-width: 600px) {
+      .detail-row {grid-template-columns:1fr;}
+      .container {padding:2rem 1rem;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <span class="logo-rig">RIG</span><span class="logo-storm">STORM</span>
+    <span class="logo-labs">LABS</span>
+  </div>
+  <ul class="nav-links" style="list-style:none; display:flex; gap:2rem;">
+    <li><a href="index.html" style="color:#a0a0b0; text-decoration:none; font-size:0.875rem; cursor:pointer;">Home</a></li>
+    <li><a href="pre-builts.html" style="color:#a0a0b0; text-decoration:none; font-size:0.875rem; cursor:pointer;">Pre-Builts</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <div class="success-box">
+    <div class="success-icon">✅</div>
+    <h1>Order Confirmed!</h1>
+    <p style="color:#a0a0b0;">Your order has been successfully placed</p>
+  </div>
+  
+  <div class="order-details" id="orderDetails">
+    <div class="detail-row">
+      <span class="detail-label">Order ID:</span>
+      <span class="detail-value" id="orderId">-</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Product:</span>
+      <span class="detail-value" id="productName">-</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Amount:</span>
+      <span class="detail-value" id="amount">-</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Customer Name:</span>
+      <span class="detail-value" id="customerName">-</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Email:</span>
+      <span class="detail-value" id="customerEmail">-</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Phone:</span>
+      <span class="detail-value" id="customerPhone">-</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Delivery Address:</span>
+      <span class="detail-value" id="customerAddress">-</span>
+    </div>
+  </div>
+  
+  <div class="payment-details">
+    <h3>📌 Next Steps - Payment Instructions</h3>
+    <p><strong>Please transfer the amount to the following bank account:</strong></p>
+    <div class="bank-info">
+      <p><strong>Account Holder:</strong> Rigstorm Labs</p>
+      <p><strong>Account Number:</strong> XXXX XXXX XXXX 1234</p>
+      <p><strong>IFSC Code:</strong> SBIN0001234</p>
+      <p><strong>Bank Name:</strong> State Bank of India</p>
+      <p style="margin-top:1rem; color:#ffaa00;">⚠ Contact support for complete bank details</p>
+    </div>
+    
+    <p style="margin-top:1.5rem;"><strong>⚡ Important:</strong></p>
+    <p>• Please mention your <strong>Order ID: <span id="orderId2">-</span></strong> in the payment reference/note</p>
+    <p>• Amount to pay: <strong><span id="amount2">₹0</span></strong></p>
+    <p>• Your order is reserved for <strong>48 hours</strong> from now</p>
+    <p>• A confirmation email has been sent to <strong><span id="email2">your email</span></strong></p>
+    <p>• Expected delivery: 5-7 business days after payment confirmation</p>
+  </div>
+  
+  <div class="support-box">
+    <h3 style="color:#00f0ff; margin-bottom:1rem; font-family:'Rajdhani',sans-serif;">🆘 Need Help?</h3>
+    <p>Have questions? Contact our support team:</p>
+    <p><strong>📧 Email:</strong> support@rigstormlabs.com</p>
+    <p><strong>📞 Phone:</strong> +91-XXXXXXXXXX</p>
+    <p style="margin-top:1rem; font-size:0.85rem; color:#606070;">Response time: 24-48 hours</p>
+  </div>
+  
+  <center>
+    <a href="index.html" class="btn-home">← Back to Home</a>
+  </center>
+</div>
+
+<footer>
+  <p>© 2026 Rigstorm Labs. All rights reserved.</p>
+</footer>
+
+<script>
+function loadOrderDetails() {
+  const params = new URLSearchParams(window.location.search);
+  const orderId = params.get('orderId');
+  
+  const orders = JSON.parse(localStorage.getItem('rigstorm_orders')) || [];
+  const order = orders.find(o => o.orderId === orderId);
+  
+  if (!order) {
+    document.getElementById('orderDetails').innerHTML = '<p style="color:red; padding:2rem;">Order not found</p>';
+    return;
+  }
+  
+  document.getElementById('orderId').textContent = order.orderId;
+  document.getElementById('orderId2').textContent = order.orderId;
+  document.getElementById('productName').textContent = order.product.name;
+  document.getElementById('amount').textContent = `₹${parseInt(order.amount).toLocaleString('en-IN')}`;
+  document.getElementById('amount2').textContent = `₹${parseInt(order.amount).toLocaleString('en-IN')}`;
+  document.getElementById('customerName').textContent = `${order.customer.firstName} ${order.customer.lastName}`;
+  document.getElementById('customerEmail').textContent = order.customer.email;
+  document.getElementById('email2').textContent = order.customer.email;
+  document.getElementById('customerPhone').textContent = order.customer.phone;
+  document.getElementById('customerAddress').textContent = order.customer.address;
+}
+
+window.addEventListener('DOMContentLoaded', loadOrderDetails);
+</script>
+
+</body>
+</html>
