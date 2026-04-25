@@ -71,14 +71,15 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
       </div>
 
       <div class="form-group">
-        <label for="phone">Phone *</label>
-        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
       </div>
 
       <div class="form-group">
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address">
       </div>
+      <span class="error-message" style="display:block; margin-top:-1rem; margin-bottom:1rem;" id="contactError"></span>
 
       <div class="form-group">
         <label for="address">Address *</label>
@@ -91,8 +92,8 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
       </div>
 
       <div class="form-group">
-        <label for="budget">Budget *</label>
-        <input type="number" id="budget" name="budget" required placeholder="Enter your budget in rupees">
+        <label for="budget">Budget</label>
+        <input type="number" id="budget" name="budget" placeholder="Enter your budget in rupees (optional)">
       </div>
 
       <button type="submit" class="submit-btn">Build Now</button>
@@ -110,6 +111,32 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
 
 <script>
 document.getElementById('buildForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const contactError = document.getElementById('contactError');
+  
+  if (!email && !phone) {
+    contactError.textContent = 'Please provide at least one contact method: email or phone number';
+    contactError.style.color = '#ff4444';
+    return;
+  }
+  
+  if (email && !email.includes('@')) {
+    contactError.textContent = 'Invalid email address';
+    contactError.style.color = '#ff4444';
+    return;
+  }
+  
+  if (phone && phone.replace(/\D/g, '').length < 10) {
+    contactError.textContent = 'Phone number must be at least 10 digits';
+    contactError.style.color = '#ff4444';
+    return;
+  }
+  
+  contactError.textContent = '';
+  
   const messageDiv = document.getElementById('message');
   
   // Show loading state
