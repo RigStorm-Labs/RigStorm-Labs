@@ -12,12 +12,12 @@ body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#fff;overflow-x:hid
 }
 
 /* NAVBAR */
-nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.95);border-bottom:1px solid rgba(0,240,255,0.12);backdrop-filter:blur(10px);}
-.logo{display:flex;align-items:baseline;gap:2px;}
+nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:center;background:rgba(10,10,15,0.95);border-bottom:1px solid rgba(0,240,255,0.12);backdrop-filter:blur(10px);}
+.logo{display:flex;align-items:baseline;gap:2px;position:absolute;left:2rem;}
 .logo-rig{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,#00f0ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .logo-storm{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#a0a0b0;}
 .logo-labs{font-family:'Rajdhani',sans-serif;font-size:0.75rem;letter-spacing:0.4em;color:#606070;margin-left:6px;align-self:center;}
-.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links{display:flex;gap:2rem;list-style:none;justify-content:center;}
 .nav-links a{color:#a0a0b0;text-decoration:none;font-size:0.875rem;letter-spacing:0.05em;transition:color 0.2s;cursor:pointer;}
 .nav-links a:hover{color:#00f0ff;}
 
@@ -32,12 +32,12 @@ nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items
 .build-card h3{font-family:'Orbitron',monospace;font-size:1.3rem;margin-bottom:1rem;color:#00f0ff;}
 .build-card .tier{font-size:0.75rem;color:#606070;letter-spacing:0.1em;margin-bottom:0.5rem;}
 .build-card .price{font-family:'Orbitron',monospace;font-size:1.5rem;font-weight:700;color:#00f0ff;margin:1rem 0;}
-.build-specs{list-style:none;margin:1.5rem 0;}
+.build-specs{list-style:none;margin:1.5rem 0;flex:1;}
 .build-specs li{padding:0.5rem 0;color:#a0a0b0;font-size:0.9rem;border-bottom:1px solid rgba(0,240,255,0.1);}
 .build-specs li::before{content:'✓ ';color:#00f0ff;margin-right:0.5rem;}
-.cta-btn{display:inline-block;margin-top:1.5rem;padding:0.8rem 1.5rem;background:linear-gradient(135deg,#00f0ff,#4d4dff);color:#000;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:0.1em;cursor:pointer;border:none;transition:transform 0.3s;text-decoration:none;}
+.cta-btn{display:inline-block;margin-top:1.5rem;padding:0.8rem 1.5rem;background:linear-gradient(135deg,#00f0ff,#4d4dff);color:#000;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:0.1em;cursor:pointer;border:none;transition:transform 0.2s;}
 .cta-btn:hover{transform:scale(1.05);}
-.btn-buy{display:inline-block;margin-top:1.5rem;padding:0.8rem 1.5rem;background:linear-gradient(135deg,#00f0ff,#4d4dff);color:#000;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:0.1em;cursor:pointer;border:none;transition:transform 0.3s;text-decoration:none;}
+.btn-buy{display:inline-block;margin-top:1.5rem;padding:0.8rem 1.5rem;background:linear-gradient(135deg,#00f0ff,#4d4dff);color:#000;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:0.1em;cursor:pointer;border:none;transition:transform 0.2s;}
 .btn-buy:hover{transform:scale(1.05);}
 
 /* FOOTER */
@@ -74,7 +74,7 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
         <li>512GB NVMe SSD</li>
         <li>650W PSU</li>
       </ul>
-      <a href="checkout.html?id=stormcore-king&name=StormCore%20King&price=66999&tier=MID%20TIER&specs=AMD%20Ryzen%205%205500,%20RX%207600%208GB,%2016GB%20DDR4-3200,%20512GB%20NVMe%20SSD,%20650W%20PSU" class="btn-buy">Buy Now</a>
+      <a href="checkout.html?id=stormcore-king&name=StormCore%20King&price=66999&tier=MID%20TIER&specs=AMD%20Ryzen%205%205500,%20RX%207600%208GB,%2016GB%20DDR4-3200,%20512GB%20NVMe%20SSD,%20650W%20PSU" class="btn-buy">ADD TO CART</a>
     </div>
   </div>
 </div>
