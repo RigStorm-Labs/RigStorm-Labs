@@ -1,0 +1,32 @@
+<section class="posts-1" aria-label="latest-post-1">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-heading text-center">
+					<h2 class="text-center display-6 mb-1 fw-bold">Latest Posts</h2>
+					<p class="lead text-center text-muted mb-4">Fresh updates from the industry.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="container">
+	<div data-v-component-posts="posts-1" data-v-limit="3" data-v-image_size="medium">
+		<div class="row">
+		   
+		   @@for (var i = 0; i < 3; i++) {
+		   
+			<div class="col-12 col-lg-4 mb-2" data-aos="fade-up" data-aos-delay="{$index}00" data-v-post>
+				
+				@@include('../../_includes/blog-list-item.html', {"class":"h-100 shadow-sm border"})
+				
+			</div>              
+
+		   }
+		
+		</div>
+	</div>
+	</div>
+</section>

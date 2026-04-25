@@ -1,0 +1,117 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Profile", "path":"../"})
+
+<body>
+	
+	@@include('../_includes/header.html')
+
+	<main id="site-content" role="main">
+
+
+        <div class="container my-5">
+            <div class="row">
+				<div class="col-md-3 user-sidebar" data-v-save-global="user/index.html,.user-sidebar">
+				
+					 @@include('../_includes/user-sidebar.html')
+					 
+				</div>
+
+				<div class="col-md-9 justify-content-center border-start px-4" id="user-container" data-v-component-user>
+					@@include('../_includes/notifications.html')
+				
+					<h2>Profile</h2>
+										
+					<form id="profile-form" action="" method="post" class="settings" data-v-user>
+						<input type="hidden" name="action" id="action" value="save">
+						   
+					
+						<div class="mb-3 row">
+							<label for="input-user" class="col-sm-2 col-form-label">User</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="input-user" placeholder="User" name="user[username]" maxlength="60" data-v-user-username disabled>
+							</div>
+						 </div>		 
+
+						 <div class="mb-3 row">
+							<label for="input-email" class="col-sm-2 col-form-label">Email</label>
+							<div class="col-sm-10">
+							  <input type="email" class="form-control" id="input-email" placeholder="Email" name="user[email]" maxlength="100" data-v-user-email required>
+							</div>
+						  </div>		 
+
+						  <div class="mb-3 row">
+							<label for="input-display_name" class="col-sm-2 col-form-label" >Display name</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="input-display_name" placeholder="Display name" name="user[display_name]" maxlength="250" data-v-user-display_name required>
+							</div>					 
+						  </div>					 
+
+						  <div class="mb-3 row">
+							<label for="input-first_name" class="col-sm-2 col-form-label" >First name</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="input-first_name" placeholder="First name" name="user[first_name]" maxlength="32" data-v-user-first_name required>
+							</div>
+						  </div>
+						  
+						  <div class="mb-3 row">
+							<label for="input-last_name" class="col-sm-2 col-form-label" >Last name</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="input-last_name" placeholder="Last name" name="user[last_name]" maxlength="32"data-v-user-last_name required>
+							</div>
+						  </div>						  
+						  
+						  <div class="mb-3 row">
+							<label for="input-phone_number" class="col-sm-2 col-form-label">Phone number</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="input-phone_number" placeholder="Phone number" name="user[phone_number]" maxlength="32" data-v-user-phone_number>
+							</div>
+						  </div>
+
+						  <div class="mb-3 row">
+							<label for="input-url" class="col-sm-2 col-form-label">Website</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="input-url" placeholder="Url" name="user[url]" maxlength="100" data-v-user-url>
+							</div>
+						  </div>
+
+						 <div class="mb-3 row">
+							<label for="input-site-title" class="col-sm-2 col-form-label">
+								Password<br>
+								<small class="text-muted">Enter new password to reset</small>
+							</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="input-site-title" placeholder="Password" name="user[password]" data-v-user-password>
+							</div>
+						</div>		 
+						
+						<div class="mb-3">
+							<button type="submit" name="action" value="delete" href="" class="btn btn-outline-danger btn-icon btn-sm ms-1 float-start" onclick="return confirm('Are you sure?');">
+									<i class="la la-trash me-2"></i>
+									<span>Delete account</span>
+							  </button>
+							<button type="submit" name="action" value="download" href="" class="btn btn-outline-primary btn-icon btn-sm ms-1 float-start">
+									<i class="la la-download me-2"></i>
+									<span>Download account data</span>
+							  </button>
+							  
+							<button type="submit" href=""
+								 class="btn btn-primary btn-icon ms-1 float-end"
+								>
+									<i class="la la-save me-2"></i>
+									<span>Save settings</span>
+							  </button>
+						</div>		
+					
+					</form>
+			
+				</div>
+            </div>
+        </div>
+	</main>
+
+	@@include('../_includes/footer.html')
+
+	@@include('../_includes/footer-scripts.html')
+  	
+  	
+</body>
+</html>

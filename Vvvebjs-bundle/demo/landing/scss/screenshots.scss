@@ -1,0 +1,16 @@
+//add visual helpers when generating section thumbnails
+
+//used for base sections to add borders for columns
+section { 
+	.container, .container-fluid {
+		.row {
+			> [class*="col-"]:empty, 
+			> .col:empty {
+				outline:2px solid rgba(var(--bs-secondary-rgb), 0.7);
+				outline-offset: -1rem;
+				background:var(--bs-tertiary-bg);
+				min-height:200px;
+			}
+		}
+	}
+}
