@@ -1,0 +1,86 @@
+@@include('../_includes/html-head.html', {"title": "Vvveb - Downloads", "path":"../"})
+
+<body>
+	
+	@@include('../_includes/header.html')
+
+	<main id="site-content" role="main">
+
+
+        <div class="container my-5">
+            <div class="row">
+				<div class="col-md-3 user-sidebar" data-v-save-global="user/index.html,.user-sidebar">
+				
+					 @@include('../_includes/user-sidebar.html')
+					 
+				</div>
+
+				<div class="col-md-9 justify-content-center border-start px-4" id="user-container">
+					@@include('../_includes/notifications.html')
+				
+					<h2>Downloads</h2>
+
+					<div class="table-responsive"  data-v-order_status_id="4" data-v-component-digital_assets>
+						<table class="table table-hover border-top">
+								<thead>
+								<tr>
+								<td class="text-center">Order id</td>
+								<td class="text-center">Product name</td>
+								<td class="text-center">Name</td>
+								<!-- <td class="text-center">No products</td> -->
+								<td class="text-center">File</td>
+								<!-- <td class="text-start">Tracking Code</td> -->
+								<td>Download</td>
+								</tr>
+								</thead>
+
+							 <tbody>
+							 <tr data-v-digital_asset>
+								  <td class="text-center">
+									<span>#</span>
+									<span data-v-digital_asset-customer_order_id>1</span>
+								  </td>
+								  <td class="text-center">
+									<span data-v-digital_asset-product_name></span>
+								  </td>
+								  <td class="text-center">
+									<span data-v-digital_asset-name></span>
+								  </td>
+								  <td class="text-center">
+									<span data-v-digital_asset-public></span>
+								  </td>
+								  <td class="text-center">
+									  <a href="" title="Download" class="btn btn-primary btn-sm" data-v-digital_asset-url download>
+										<i class="la la-download"></i>
+									  </a> 
+								 </td>
+							</tr>
+							<tr data-v-if-not="count >= 1">
+								<td colspan="100">
+									<div class="text-center p-4">
+										<div>
+											<i class="la la-box fs-1 mb-2"></i>
+											<h6>No downloads to display!</h6>											
+										</div>
+									</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					  </div>
+					  
+					  @@include('../_includes/pagination.html', {"component": "digital_assets", "component-index":0})
+			
+				</div>
+				
+            </div>
+        </div>
+	</main>
+
+	@@include('../_includes/footer.html')
+
+	@@include('../_includes/footer-scripts.html')
+  	
+  	
+</body>
+</html>

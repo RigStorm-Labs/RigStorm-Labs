@@ -1,0 +1,27 @@
+  <div class="collapse navbar-collapse" id="navbar" data-v-component-menu="header" data-v-slug="main-menu">
+	@@include('navbar.html', {"nouser":@@nocart, "nocart":@@nocart})  
+
+    @@if (typeof nosearch == "undefined")  {
+	<button class="btn btn-outline-secondary btn-sm border-0 shadow-none" type="submit" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+		<div class="la-flip-horizontal">
+			<i class="la la-search la-lg" aria-hidden="true"></i>
+		</div>
+	</button>
+   }
+
+<!--
+	<div class="search-area toggle-hover">
+		<form action="/search" method="get" data-v-action="/search">
+			<input type="hidden" name="route" value="search">
+			<div class="input-group">
+				<input type="search" name="search" class="form-control" id="headerSearch" placeholder="Type for search" data-v-vvveb-action="search" data-v-vvveb-on="keyup">
+				<button class="btn border-0" type="submit" title="Search">
+					<div class="la-flip-horizontal">
+						<i class="la la-search la-lg" aria-hidden="true"></i>
+					</div>
+				</button>
+			</div>			  
+		</form>
+	</div>
+-->	
+  </div>

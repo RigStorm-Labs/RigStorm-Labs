@@ -1,0 +1,21 @@
+.features-1 {
+	.max-box {
+		margin:auto;
+	}
+
+	.wrap {
+		.max-box {
+			max-width: 480px;
+		}
+	}
+	a {
+		//text-decoration: none;
+	}
+	.linking {
+		//color: #3e4555;
+		&:hover {
+			//color: #316ce8;
+		}
+	}
+
+}

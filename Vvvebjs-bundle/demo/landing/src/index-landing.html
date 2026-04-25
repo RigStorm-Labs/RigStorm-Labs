@@ -1,0 +1,391 @@
+@@include('./_includes/html-head.html', {
+	"title": "Vvveb Landing - Homepage", 
+	"path": "", 
+	"path": "", 
+	'google_fonts':'',
+	'style':"\
+	}"
+})
+
+
+<body class="home">
+	  
+        @@include('./sections/navigation/navigation-4.html')
+
+        @@include('./sections/hero/hero-1.html')
+
+	
+	<!--
+
+	<section class="d-flex showcase-1 section-overlap pt-0" style="background:var(--bs-body-bg)">
+		<div class="container">
+			  <div class="frame mx-auto">
+				<video loading="lazy" src="video/intro.mp4" width="1280" muted="true" playsinline="true" loop="true" controls="true"></video>
+			  </div>
+
+		</div>
+		
+	</section>
+	-->
+
+	<section class="mb-5 py-5" style="background-color:rgba(var(--bs-body-color-rgb), 0.03)">
+		<div class="container">
+			<div class="py-4">
+				<h2 class="display-6 fw-bold text-center">Packed with everything you need to build any modern website.</h2>
+				<div class="mx-auto text-center">
+					<p class="fs-5 mx-auto">Vvveb has all the features you will need to manage your content or sell online.</p>
+					<p class="fs-5 mx-auto">It includes a page builder, has full internationalization support, advanced ecommerce features, security.</p>
+					<p class="fs-5 mx-auto">And with the integrated extensions marketplace you can extend it for any purpose.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-5 col-sm-12 col-text">
+			<div>
+			 <h3>Drag and drop page builder</h3>
+			 <div class="d-flex"><i class="la la-mouse la-lg"></i> <p>Unique abillity to customize any page and element without limitations.</p></div>
+			 <div class="d-flex"><i class="la la-desktop la-lg"></i> <p>Real WYSIWYG editor, the page will look exactly like in the editor with no difference.</p></div>
+			</div>
+		  </div>
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video float-end">
+				<video loading="lazy" class="img-fluid" src="video/drag.m4v" width="1280" muted="true" loop="true" controls="true" poster="https://www.vvveb.com/img/light-theme.webp"></video>
+			  </div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+
+
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video">
+				<!-- <video loading="lazy" class="img-fluid" src="video/drag.m4v" muted playsinline loop></video> -->
+				<img src="img/security.webp" class="img-fluid" alt="Security dashboard" loading="lazy">
+			  </div>
+		  </div>
+		  <div class="col-md-5 col-sm-12 col-text">
+			<div>
+			 <h3>Better Security</h3>
+			 <div class="d-flex"><i class="la la-user-lock la-lg"></i><p>Custom random <i>/admin-0j57bgw</i> login page for admin to protect against password brute force attacks.</p></div>
+			 <div class="d-flex"><i class="la la-lock la-lg"></i><p>Vvveb is 100% safe against sql injections a vulnerability that affects many CMSes.</p></div>
+			 <div class="d-flex"><i class="la la-shield-alt la-lg"></i><p>Document root folder can be set to /public to expose only index.php to minimize attack surface and protect plugins php files from exposure.</p></div>
+			 <div class="d-flex"><i class="la la-key la-lg"></i><p>Built in integrity check.</p></div>
+			    <div class="d-flex">
+			      <i class="la la-fingerprint la-lg"></i>
+			      <p>2FA Authentication.</p>
+			    </div>
+			</div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+
+
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-5 col-sm-12">
+			  <div class="col-text">
+				 <h3>Hybrid Headless CMS</h3>
+				 <div class="d-flex"><i class="la la-code-branch la-lg"></i><p>Vvveb can used both as a traditional CMS and a Headless CMS</p></div>
+				 <div class="d-flex"><i class="la la-server la-lg"></i><p>Both GraphQL and REST Api are available for integration.</p></div>
+			  </div>
+		  </div>
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video d-flex">
+				<!-- <video loading="lazy" class="img-fluid" src="video/drag.m4v" muted playsinline loop></video> -->
+				<img src="https://plugins.vvveb.com/media//plugins/openapi/openapi-1.png" alt="OpenAPI Headless CMS" class="w-50" loading="lazy">
+				<img src="https://plugins.vvveb.com/media//plugins/graphql/graphql-1.png" alt="GraphQL Headless CMS" class="w-50" loading="lazy">
+			  </div>
+		  </div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+	
+	
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video d-flex">
+				<!-- <video loading="lazy" class="img-fluid" src="video/drag.m4v" muted playsinline loop></video> -->
+				<img class="img-fluid" src="img/role.webp" alt="CMS Role permissions" loading="lazy">
+			  </div>
+		  </div>
+		  <div class="col-md-5 col-sm-12">
+			  <div class="col-text">
+				 <h3>Role-based access and permissions.</h3>
+				 <div class="d-flex"><i class="la la-lock la-lg"></i><p>Action level access management for each role</p></div>
+				 <div class="d-flex"><i class="la la-key la-lg"></i><p>Control role permission for both dashboard and GraphQL and Rest APIs.</p></div>
+			  </div>
+		  </div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-5 col-sm-12">
+			  <div class="col-text">
+				 <h3>Localization</h3>
+				 <div class="d-flex"><i class="la la-flag la-lg"></i><p>Publish content in multiple languages or sell in different currencies.</p></div>
+				 <div class="d-flex"><i class="la la-globe la-lg"></i><p>With language packs use the interface in the language you like.</p></div>
+			  </div>
+		  </div>
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video float-end">
+				<!-- <video loading="lazy" class="img-fluid" src="video/drag.m4v" muted playsinline loop></video> -->
+				<img class="img-fluid" src="img/languages.webp" alt="Languages list" loading="lazy">
+			  </div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+
+	
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video">
+					<!-- <video loading="lazy" class="img-fluid" src="video/drag.m4v" muted playsinline loop></video> -->
+					<img class="img-fluid" src="img/ecommerce.webp" alt="Ecommerce product edit" loading="lazy">
+			  </div>
+		  </div>
+		  <div class="col-md-5 col-sm-12 col-text">
+			<div>
+			 <h3>Ecommerce</h3>
+			 <div class="d-flex"><i class="la la-store-alt la-lg"></i><p>Vvveb is a full featured ecommerce platform with advanced functionality.</p></div>
+			 <div class="d-flex"><i class="la la-shopping-bag la-lg"></i><p>All modern ecommerce features are available</p></div>
+			 <div class="d-flex"><i class="la la-wallet la-lg"></i><p>Multiple payment methods</p></div>
+			</div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+	
+
+
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-5 col-sm-12">
+			 <div class="col-text">
+				 <h3>Easy installation</h3>
+				 <div class="d-flex"><i class="la la-hand-pointer la-lg"></i><p>One click easy installation, with no setup when using sqlite.</p></div>
+				 <div class="d-flex"><i class="la la-database la-lg"></i><p>Supports MySql, SQLite and PostgreSql databases.</p></div>
+				 <div class="d-flex"><i class="lab la-php la-lg"></i><p>Compatible with all PHP versions from 7.4 to 8.4+</p></div>
+			</div>
+		  </div>
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video">
+				<!-- <video loading="lazy" class="img-fluid" src="video/drag.m4v" muted playsinline loop></video> -->
+				<img class="img-fluid" src="img/install.webp" alt="Install screen first step" loading="lazy">
+			  </div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+		
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video">
+				<!-- <video loading="lazy" class="img-fluid" src="video/drag.m4v" muted playsinline loop></video> -->
+				<img class="img-fluid" src="img/multisite.webp" alt="Multi site list" loading="lazy">
+			  </div>
+		  </div>
+		  <div class="col-md-5 col-sm-12">
+			 <div class="col-text">
+				 <h3>Multi site</h3>
+				 <div class="d-flex"><i class="la la-project-diagram la-lg"></i><p>Manage multiple websites or subdomains from the same installation.</p></div>
+				 <div class="d-flex"><i class="la la-network-wired la-lg"></i><p>Run your blog, store, portfolio everything from the same dashboard.</p></div>
+			</div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+	
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-5 col-sm-12">
+			 <div class="col-text">
+				 <h3>SEO out of the box</h3>
+				 <div class="d-flex"><i class="la la-lightbulb la-lg"></i><p>Optimized for Lighthouse 100% high score <a href="https://pagespeed.web.dev/analysis/https-www-vvveb-com/ifu8jek4v9?form_factor=desktop" target="_blank" >test results</a>.</p></div>
+				 <div class="d-flex"><i class="la la-sitemap la-lg"></i><p>Automatic sitemaps and robots.txt configuration.</p></div>
+				 <div class="d-flex"><i class="la la-server la-lg"></i><p>Time To First Byte in a few miliseconds.</p></div>
+				 <div class="d-flex"><i class="la la-language la-lg"></i><p>Href langs support for multi language SEO.</p></div>
+				 <div class="d-flex"><i class="lab la-twitter la-lg"></i><p>Open Graph protocol meta tags for social snippets.</p></div>
+			</div>
+		  </div>
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video float-end">
+				<img class="img-fluid" src="img/seo.webp" alt="Search engine optimization" loading="lazy">
+			  </div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+	
+
+
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video">
+				<img class="img-fluid" class="img-fluid" src="img/cache.webp" alt="Cache performance" loading="lazy">
+			</div>
+		  </div>
+		  <div class="col-md-5 col-sm-12">
+			 <div class="col-text">
+				 <h3>Very, very fast</h3>
+				 <div class="d-flex"><i class="la la-feather-alt la-lg"></i><p>Low footprint, runs fast even on free shared hosting.</p></div>
+				 <div class="d-flex"><i class="la la-file-alt la-lg"></i><p>With advanced caching can serve pages as fast as static websites.</p></div>
+				 <div class="d-flex"><i class="la la-traffic-light la-lg"></i><p>Because of high performance can withstand traffic spikes without issues.</p></div>
+			</div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+	
+	
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-5 col-sm-12">
+			 <div class="col-text">
+				 <h3>Demo import</h3>
+				 <div class="d-flex"><i class="la la-eye la-lg"></i><p>Built in theme demo import functionality helps you get started faster by providing initial content and configuration.</p></div>
+				 
+			</div>
+		  </div>
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video float-end">
+				<img class="img-fluid" src="img/themes.webp" alt="Themes demo import" loading="lazy">
+			  </div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+	
+
+
+	<section class="d-flex showcase-1">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video">
+				<img class="img-fluid" src="img/open_source.webp" alt="Open source collaboration" loading="lazy">
+			</div>
+		  </div>
+		  <div class="col-md-5 col-sm-12">
+			 <div class="col-text">
+				 <h3>Open source &amp; free</h3>
+				 <div class="d-flex"><i class="la la-hands la-lg"></i><p>Open source code means transparency and collaboration.</p></div>
+				 <div class="d-flex"><i class="la la-dove la-lg"></i><p>Free to use for everyone.</p></div>
+			</div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+
+
+	<section class="d-flex showcase-1 ">
+	   <div class="container">
+	   <div class="row align-items-center">
+		  <div class="col-md-5 col-sm-12 col-text">
+			<div>
+			 <h3>Unlimited design powers</h3>
+			 <div class="d-flex"><i class="la la-code la-lg"></i><p>Vvveb uses plain html for templating for maximum flexibility, convert any html template to a theme in just a few minutes.</p></div>
+			</div>
+		  </div>
+		  <div class="col-md-7 col-sm-12 col-img">
+			  <div class="video float-end">
+				<!-- <video loading="lazy" class="img-fluid" src="video/drag.m4v" muted playsinline loop></video> -->
+				<img class="img-fluid" src="img/html.webp" alt="Html code preview" loading="lazy">
+			  </div>
+		  </div>
+	   </div>
+	   </div>
+	</section>
+<!--
+	<section class="showcase-1">
+		<div class="container">
+		  <div class="row align-items-center">
+	  
+				<h3 class="text-center">Sponsors</h3>
+				<hr class="border-secondary"/>
+				
+				<div class="text-center my-4">
+					<a href="https://trycrypto.com/?utm_source=opencollective&utm_medium=github&utm_campaign=vvvebjs" rel="sponsored noopener" target="_blank">
+						<img class="img-fluid" src="https://opencollective.com/vvvebjs/sponsors/0/avatar" alt="Sponsors" loading="lazy">
+						<h2 class="visually-hidden">Sponsors</h2>
+					</a>
+				</div>
+				<div class="text-center">
+          <a href="https://opencollective.com/vvvebjs/backers/0/website" rel="sponsored noopener" target="_blank">
+            <img class="img-fluid" width="32" src="https://opencollective.com/vvvebjs/backers/0/avatar" alt="Backers" loading="lazy">
+            <h2 class="visually-hidden">Backers</h2>
+          </a>
+				</div>
+
+				<div class="p-3 fs-5 text-center my-4">
+					<a href="/page/sponsor" class="btn btn-primary mx-auto d-inline-block">Become Sponsor</a>
+				</div>
+
+				
+				</div>
+			</div>
+		</div>
+	</section>
+
+-->
+@@include('./sections/footer/footer-1.html')
+@@include('./_includes/footer-scripts.html')
+
+<script>
+/*
+var options = {
+    //root: document.body,
+    rootMargin: '0px',
+    threshold: 1.0 // trigger only when element comes into view completely
+};
+
+var previousVideo = false;
+var currentVideo = false;
+var ob = new IntersectionObserver((entries, observer) => {
+  currentVideo = entries[0].target;
+
+  if (previousVideo) {
+	  previousVideo.pause();
+	  previousVideo.parentNode.classList.toggle('play');
+  }
+  previousVideo = entries[0].target;
+  currentVideo.play();
+  currentVideo.parentNode.classList.toggle('play');
+  //console.log(entries[0].target);
+  
+}, options);
+
+// observe all paragraphs, when coming into view, change color
+document.querySelectorAll('video').forEach((item) => {
+  ob.observe(item);
+});
+*/
+</script>
+
+</body>
+</html>

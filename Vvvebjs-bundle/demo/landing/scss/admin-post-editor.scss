@@ -1,0 +1,22 @@
+//$max-width: 35rem !default;
+$max-width: 960px;
+
+@import "style";
+
+
+body {
+	max-width: 1140px;
+	margin:1rem auto;
+
+	@import "post-style";
+}
+
+audio, video {
+	max-width:100%;
+}
+
+@import "blocks/**/*";
+
+.mce-content-body [data-component-gallery][data-mce-selected] {
+	outline:2px solid #4099ff;
+}

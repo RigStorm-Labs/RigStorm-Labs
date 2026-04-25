@@ -1,0 +1,147 @@
+@@include('../_includes/html-head.html', {"title": "Landing - Product listing", "path":"../"})
+
+<body>
+	
+	@@include('../_includes/header.html')
+	
+	
+	<main id="site-content" role="main">
+      <div class="container mt-4">
+        <div class="row justify-content-between">
+		
+         <div class="col-md-3 col-xl-3 products-sidebar">
+			@@include('_sidebar.html')
+		 </div>
+		  
+          <div class="col-md-9 col-xl-9 content-body">
+
+			<div class="row g-3 g-md-5 align-items-end">
+			  <div class="col-md-6">
+
+				@@include('../_includes/breadcrumb.html')
+				
+			  </div>
+			  <div class="col-md-6 text-md-end">
+					<!--
+					<select class="form-select" onchange="location.href=this.value">
+						<option value="/shop?order_by=product_id&direction=desc">Newest</option>
+						<option value="/shop?order_by=product_id&direction=asc">Oldest</option>
+					</select>
+					-->
+				  
+					<div class="dropdown mb-2" onclick="sortDropdown(event)">
+					  <a class="btn btn-outline-secondary btn-sm dropdown-toggle" role="button" id="sort-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+						<span data-v-if="(this.order_by = 'product_id' && this.direction = 'desc') || this.order_by = ''"><i class="la la-calendar"></i> <span>Newest</span></span>
+						<span data-v-if="this.order_by = 'product_id' && this.direction = 'asc'"><i class="la la-calendar"></i> <span>Oldest</span></span>
+						<span data-v-if="this.order_by = 'price' && this.direction = 'asc'"><i class="la la-arrow-up"></i> <span>Price low to high</span></span>
+						<span data-v-if="this.order_by = 'price' && this.direction = 'desc'"><i class="la la-arrow-down"></i> <span>Price high to low</span></span>
+						<span data-v-if="this.order_by = 'name' && this.direction = 'asc'"><i class="la la-sort-alpha-up"></i> <span>Name ascending</span></span>
+						<span data-v-if="this.order_by = 'name' && this.direction = 'desc'"><i class="la la-sort-alpha-up"></i> <span>Name descending</span></span>
+					  </a>
+
+					  <ul class="dropdown-menu" aria-labelledby="sort-dropdown">
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=product_id&direction=desc" data-url data-v-class-if-active="this.order_by = 'product_id' && this.direction = 'desc'">
+								<i class="la la-calendar"></i> <span>Newest</span>
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=product_id&direction=asc" data-url data-v-class-if-active="this.order_by = 'product_id' && this.direction = 'asc'">
+								<i class="la la-calendar"></i> <span>Oldest</span>
+							</a>
+						</li>				
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=price&direction=asc" data-url data-v-class-if-active="this.order_by = 'price' && this.direction = 'asc'">
+								<i class="la la-arrow-up"></i> <span>Price low to high</span>
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=price&direction=desc" data-url data-v-class-if-active="this.order_by = 'price' && this.direction = 'desc'">
+								<i class="la la-arrow-down"></i> <span>Price high to low</span>
+							</a>
+						</li>
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=name&direction=asc" data-url data-v-class-if-active="this.order_by = 'name' && this.direction = 'asc'">
+								<i class="la la-sort-alpha-up"></i> <span>Name ascending</span>
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=name&direction=desc" data-url data-v-class-if-active="this.order_by = 'name' && this.direction = 'desc'">
+								<i class="la la-sort-alpha-down"></i> <span>Name descending</span>
+							</a>
+						</li>	
+						<!--
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=views&direction=desc">
+								<i class="la la-certificate"></i> <span>Most Popular</span>
+							</a>
+						</li>
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=promotion&direction=desc">
+								<i class="la la-percentage"></i> <span>Discount</span>
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=review&direction=desc">
+								<i class="la la-tags"></i> <span>Most Reviews</span>
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/shop?order_by=rating&direction=desc">
+								<i class="la la-star"></i> <span>Rating</span>
+							</a>
+						</li> -->
+					  </ul>
+					</div>
+			  </div>
+			</div>
+			
+            <div class="row" data-v-component-products="index" data-v-limit="6" data-v-variant_price="true" data-v-order_by="url" data-v-direction="url" data-v-page="url" data-v-taxonomy_item_id="url" data-v-image_size="medium" data-v-filter="url" data-v-404="true">
+              <div class="col-md-6 col-xl-4" data-v-product>
+                <div class="product">
+				
+					@@include('../_includes/product-list-item.html')
+					
+				</div>
+                </div>  
+
+				<div data-v-if="index < 1">
+					<h4 class="text-center py-4">No products to display!</h4>
+				</div>
+           		
+			 </div>
+            
+				<div class="mt-4 py-2">
+				
+					@@include('../_includes/pagination.html', {"component": "products", "component-index":0, "query_string":true})
+			
+				</div>
+			</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   
+@@include('../_includes/footer.html')  
+ 
+<script>
+function sortDropdown(e) {
+	let option = e.target.closest("a");
+	if (option) {
+	 let dropdown = document.getElementById("sort-dropdown");
+	 dropdown.innerHTML = option.innerHTML;
+    }
+}	
+</script>
+ 
+@@include('../_includes/footer-scripts.html')    
+
+<script id="filter-js" data-no-minify src="/js/app/filter.js"></script>
+
+  	
+</body>
+</html>
