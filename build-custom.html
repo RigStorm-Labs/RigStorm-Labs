@@ -43,8 +43,18 @@ nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items
 /* FOOTER */
 footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 2rem 1.5rem;margin-top:5rem;}
 .footer-inner{max-width:1200px;margin:0 auto;}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:1.5rem;text-align:center;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;}
+.footer-brand p{font-size:0.8rem;color:#606070;line-height:1.7;margin-top:0.75rem;max-width:320px;}
+.footer-col h4{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.15em;color:#00f0ff;margin-bottom:1rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.footer-col ul a{font-size:0.8rem;color:#606070;text-decoration:none;transition:color 0.2s;}
+.footer-col ul a:hover{color:#00f0ff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;}
 .footer-bottom p{font-size:0.75rem;color:#606070;}
+.social-links{display:flex;gap:1rem;}
+.social-link{width:32px;height:32px;border:1px solid rgba(0,240,255,0.2);display:flex;align-items:center;justify-content:center;color:#606070;text-decoration:none;transition:all 0.2s;}
+.social-link:hover{border-color:#00f0ff;color:#00f0ff;}
+.social-link svg{width:18px;height:18px;fill:currentColor;}
 </style>
 
 <nav>
@@ -103,8 +113,49 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
 
 <footer>
   <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-rig">RIG</span><span class="logo-storm">STORM</span><span class="logo-labs">LABS</span></div>
+        <p>Custom pre-built gaming PCs engineered for those who demand nothing but the best.</p>
+      </div>
+      <div class="footer-col">
+        <h4>PRODUCTS</h4>
+        <ul>
+          <li><a href="pre-builts.html">Pre-Builts</a></li>
+          <li><a href="build-custom.html">Custom Build</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SUPPORT</h4>
+        <ul>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Tracking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Affiliates</a></li>
+        </ul>
+      </div>
+    </div>
     <div class="footer-bottom">
       <p>© 2026 Rigstorm Labs. All rights reserved.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.youtube.com/@RigStormLabs" title="YouTube">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/rigstorm_labs/" title="Instagram">
+          <img src="/Images/ig.jpg" alt="Instagram" style="width:24px;height:24px;object-fit:contain;">
+        </a>
+      </div>
     </div>
   </div>
 </footer>
