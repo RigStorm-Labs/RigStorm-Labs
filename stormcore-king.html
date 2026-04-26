@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#fff;overflow-x:hidden;}
+:root{
+  --cyan:#00f0ff;--magenta:#ff00ff;--blue:#4d4dff;
+  --bg1:#0a0a0f;--bg2:#12121a;--bg3:#1a1a25;
+  --text2:#a0a0b0;--text3:#606070;
+}
+
+/* NAVBAR */
+nav{position:sticky;top:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:center;background:rgba(10,10,15,0.95);border-bottom:1px solid rgba(0,240,255,0.12);backdrop-filter:blur(10px);}
+.logo{display:flex;align-items:baseline;gap:2px;position:absolute;left:2rem;}
+.logo-rig{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,#00f0ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.logo-storm{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#a0a0b0;}
+.logo-labs{font-family:'Rajdhani',sans-serif;font-size:0.75rem;letter-spacing:0.4em;color:#606070;margin-left:6px;align-self:center;}
+.nav-links{display:flex;gap:2rem;list-style:none;justify-content:center;}
+.nav-links a{color:#a0a0b0;text-decoration:none;font-size:0.875rem;letter-spacing:0.05em;transition:color 0.2s;cursor:pointer;}
+.nav-links a:hover{color:#00f0ff;}
+
+/* CONTENT */
+.container{max-width:1200px;margin:0 auto;padding:3rem 2rem;}
+.page-title{font-family:'Orbitron',monospace;font-size:2.5rem;font-weight:900;margin-bottom:3rem;background:linear-gradient(135deg,#00f0ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+/* Product Header */
+.product-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:4rem;align-items:start;}
+.product-image{background:linear-gradient(135deg,rgba(0,240,255,0.05),rgba(77,77,255,0.1));border:1px solid rgba(0,240,255,0.1);padding:2rem;display:flex;align-items:center;justify-content:center;}
+.product-image img{max-width:100%;height:auto;}
+.product-info h1{font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;color:#00f0ff;margin-bottom:0.5rem;}
+.product-tier{font-size:0.875rem;letter-spacing:0.2em;color:#606070;margin-bottom:1rem;}
+.product-price{font-family:'Orbitron',monospace;font-size:2.5rem;font-weight:700;color:#00f0ff;margin-bottom:2rem;}
+.buy-btn{display:inline-block;padding:1rem 2rem;background:linear-gradient(135deg,#00f0ff,#4d4dff);color:#000;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:0.1em;cursor:pointer;border:none;transition:transform 0.2s;text-decoration:none;font-size:1rem;}
+.buy-btn:hover{transform:scale(1.05);}
+
+/* Section Styling */
+.section{margin-bottom:4rem;}
+.section-title{font-family:'Orbitron',monospace;font-size:1.5rem;font-weight:700;color:#00f0ff;margin-bottom:1.5rem;border-bottom:1px solid rgba(0,240,255,0.2);padding-bottom:0.5rem;}
+
+/* Specs Grid */
+.specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.spec-item{background:rgba(20,20,30,0.8);border:1px solid rgba(0,240,255,0.1);padding:1.5rem;transition:border-color 0.3s;}
+.spec-item:hover{border-color:rgba(0,240,255,0.3);}
+.spec-label{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.1em;color:#00f0ff;margin-bottom:0.5rem;}
+.spec-value{color:#a0a0b0;font-size:0.9rem;line-height:1.6;}
+
+/* Tables */
+.table-container{background:rgba(20,20,30,0.8);border:1px solid rgba(0,240,255,0.1);overflow-x:auto;}
+table{width:100%;border-collapse:collapse;min-width:600px;}
+th{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.1em;color:#00f0ff;padding:1rem;text-align:left;border-bottom:1px solid rgba(0,240,255,0.2);background:rgba(0,240,255,0.05);}
+td{padding:0.875rem 1rem;color:#a0a0b0;font-size:0.9rem;border-bottom:1px solid rgba(0,240,255,0.08);}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(0,240,255,0.03);}
+
+/* Game Performance Tables */
+.game-section{margin-bottom:2rem;}
+.game-title{font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:1rem;}
+.performance-table th:nth-child(1),.performance-table td:nth-child(1){width:15%;}
+.performance-table th:nth-child(2),.performance-table td:nth-child(2){width:15%;}
+.performance-table th:nth-child(3),.performance-table td:nth-child(3){width:12%;}
+.performance-table th:nth-child(4),.performance-table td:nth-child(4){width:12%;}
+.performance-table th:nth-child(5),.performance-table td:nth-child(5){width:12%;}
+.performance-table th:nth-child(6),.performance-table td:nth-child(6){width:20%;}
+.playability-good{color:#00f0ff;}
+.playability-very-smooth{color:#00ff88;}
+.playability-okay{color:#ffaa00;}
+.playability-average{color:#ff6600;}
+.playability-smooth{color:#00dd88;}
+.playability-great{color:#00ffaa;}
+
+/* FPS Graph Placeholder */
+.graph-placeholder{background:rgba(20,20,30,0.8);border:1px solid rgba(0,240,255,0.1);padding:3rem;text-align:center;}
+.graph-placeholder-text{font-family:'Rajdhani',sans-serif;font-size:1.1rem;color:#606070;letter-spacing:0.1em;}
+
+/* FOOTER */
+footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 2rem 1.5rem;margin-top:5rem;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;}
+.footer-brand p{font-size:0.8rem;color:#606070;line-height:1.7;margin-top:0.75rem;max-width:320px;}
+.footer-brand .logo{display:flex;align-items:center;justify-content:center;margin-bottom:0.5rem;}
+.footer-tagline{font-size:0.8rem;color:#606070;line-height:1.7;margin-top:0.75rem;margin-bottom:0.75rem;text-align:center;max-width:100%;clear:both;}
+.footer-col h4{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.875rem;letter-spacing:0.15em;color:#00f0ff;margin-bottom:1rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.footer-col ul a{font-size:0.8rem;color:#606070;text-decoration:none;transition:color 0.2s;}
+.footer-col ul a:hover{color:#00f0ff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-size:0.75rem;color:#606070;}
+.social-links{display:flex;gap:1rem;}
+.social-link{width:32px;height:32px;border:1px solid rgba(0,240,255,0.2);display:flex;align-items:center;justify-content:center;color:#606070;text-decoration:none;transition:all 0.2s;}
+.social-link:hover{border-color:#00f0ff;color:#00f0ff;}
+.social-link svg{width:18px;height:18px;fill:currentColor;}
+
+@media (max-width:768px){
+  .product-header{grid-template-columns:1fr;}
+  .specs-grid{grid-template-columns:1fr;}
+}
+</style>
+
+<nav>
+  <div class="logo">
+    <span class="logo-rig">RIG</span><span class="logo-storm">STORM</span>
+    <span class="logo-labs">LABS</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pre-builts.html">Pre-Builts</a></li>
+    <li><a href="guides.html">Guides</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">STORMCORE KING</h1>
+  
+  <div class="product-header">
+    <div class="product-image">
+      <img src="/Images/RigStorm King PC.png" alt="StormCore King">
+    </div>
+    <div class="product-info">
+      <div class="product-tier">MID TIER</div>
+      <h1>StormCore King</h1>
+      <div class="product-price">₹66,999</div>
+      <a href="checkout.html?id=stormcore-king&name=StormCore%20King&price=66999&tier=MID%20TIER&specs=AMD%20Ryzen%205%205500,%20RX%207600%208GB,%2016GB%20DDR4-3200,%20512GB%20NVMe%20SSD,%20650W%20PSU" class="buy-btn">BUY NOW</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">HARDWARE SPECIFICATIONS</h2>
+    <div class="specs-grid">
+      <div class="spec-item">
+        <div class="spec-label">PROCESSOR</div>
+        <div class="spec-value">6 Cores & 12 Threads, 16 MB Cache. Base Clock 3.60GHz, Turbo Boost Up To 4.20GHz. Uses AM4 Socket that supports DDR4 at 3200MHz.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">CHIPSET</div>
+        <div class="spec-value">2.5GBps LAN upgraded network solution for professional and multimedia use. Supports DDR4 Memory, up to 4133MHz.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">RAM</div>
+        <div class="spec-value">Dual Channel for improved performance. Supports Intel XMP profiles for easy overclocking.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">GPU</div>
+        <div class="spec-value">Supports up to 8K 60Hz with HDMI and Display Port 1.4 with DSC.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">COOLER</div>
+        <div class="spec-value">Stock Cooler that comes with your processor.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">STORAGE</div>
+        <div class="spec-value">Boosts productivity with PCIe Gen 3. Up to 3500MB/s Read speeds.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">PSU</div>
+        <div class="spec-value">Reliable 80 PLUS Silver efficiency under typical load, minimizing excess heat waste and lowering energy costs.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">CHASSIS</div>
+        <div class="spec-value">3 preloaded 120mm ARGB PWM Fans. Panoramic front and side glasses. Supports up to 240mm radiator in the top.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">BENCHMARKS</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Benchmark</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">GPU</td>
+            <td>3DMark Timespy</td>
+            <td>10977</td>
+          </tr>
+          <tr>
+            <td>Superposition Benchmark</td>
+            <td>4730</td>
+          </tr>
+          <tr>
+            <td rowspan="4">Processor</td>
+            <td>Cinebench R23 Single Core</td>
+            <td>1358</td>
+          </tr>
+          <tr>
+            <td>Cinebench R23 Multi Core</td>
+            <td>10412</td>
+          </tr>
+          <tr>
+            <td>Geekbench 6 Single Core</td>
+            <td>1961</td>
+          </tr>
+          <tr>
+            <td>Geekbench 6 Multi Core</td>
+            <td>1220</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">GAME PERFORMANCE (MEDIUM SETTINGS)</h2>
+    
+    <div class="game-section">
+      <h3 class="game-title">Cyberpunk 2077</h3>
+      <div class="table-container">
+        <table class="performance-table">
+          <thead>
+            <tr>
+              <th>Resolution</th>
+              <th>Avg FPS</th>
+              <th>Min</th>
+              <th>Max</th>
+              <th>Playability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1920 × 1080</td>
+              <td>66</td>
+              <td>56</td>
+              <td>75</td>
+              <td class="playability-good">Good</td>
+            </tr>
+            <tr>
+              <td>2560 × 1440</td>
+              <td>49</td>
+              <td>42</td>
+              <td>56</td>
+              <td class="playability-okay">Okay</td>
+            </tr>
+            <tr>
+              <td>3840 × 2160</td>
+              <td>32</td>
+              <td>27</td>
+              <td>37</td>
+              <td class="playability-average">Average</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="game-section">
+      <h3 class="game-title">GTA V</h3>
+      <div class="table-container">
+        <table class="performance-table">
+          <thead>
+            <tr>
+              <th>Resolution</th>
+              <th>Avg FPS</th>
+              <th>Min</th>
+              <th>Max</th>
+              <th>Playability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1920 × 1080</td>
+              <td>126</td>
+              <td>107</td>
+              <td>145</td>
+              <td class="playability-very-smooth">Very Smooth</td>
+            </tr>
+            <tr>
+              <td>2560 × 1440</td>
+              <td>85</td>
+              <td>72</td>
+              <td>98</td>
+              <td class="playability-great">Great</td>
+            </tr>
+            <tr>
+              <td>3840 × 2160</td>
+              <td>49</td>
+              <td>42</td>
+              <td>56</td>
+              <td class="playability-okay">Okay</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="game-section">
+      <h3 class="game-title">Forza Horizon 5</h3>
+      <div class="table-container">
+        <table class="performance-table">
+          <thead>
+            <tr>
+              <th>Resolution</th>
+              <th>Avg FPS</th>
+              <th>Min</th>
+              <th>Max</th>
+              <th>Playability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1920 × 1080</td>
+              <td>103</td>
+              <td>87</td>
+              <td>118</td>
+              <td class="playability-smooth">Smooth</td>
+            </tr>
+            <tr>
+              <td>2560 × 1440</td>
+              <td>75</td>
+              <td>64</td>
+              <td>86</td>
+              <td class="playability-good">Good</td>
+            </tr>
+            <tr>
+              <td>3840 × 2160</td>
+              <td>48</td>
+              <td>41</td>
+              <td>55</td>
+              <td class="playability-okay">Okay</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="game-section">
+      <h3 class="game-title">Counter Strike 2</h3>
+      <div class="table-container">
+        <table class="performance-table">
+          <thead>
+            <tr>
+              <th>Resolution</th>
+              <th>Avg FPS</th>
+              <th>Min</th>
+              <th>Max</th>
+              <th>Playability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1920 × 1080</td>
+              <td>269</td>
+              <td>228</td>
+              <td>309</td>
+              <td class="playability-very-smooth">Very Smooth</td>
+            </tr>
+            <tr>
+              <td>2560 × 1440</td>
+              <td>178</td>
+              <td>151</td>
+              <td>205</td>
+              <td class="playability-very-smooth">Very Smooth</td>
+            </tr>
+            <tr>
+              <td>3840 × 2160</td>
+              <td>99</td>
+              <td>84</td>
+              <td>114</td>
+              <td class="playability-smooth">Smooth</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">FPS DISTRIBUTION</h2>
+    <div class="graph-placeholder">
+      <div class="graph-placeholder-text">FPS Distribution Graph - Coming Soon</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-rig">RIG</span><span class="logo-storm">STORM</span><span class="logo-labs">LABS</span></div>
+        <p class="footer-tagline">Custom pre-built gaming PCs engineered for those who demand nothing but the best.</p>
+      </div>
+      <div class="footer-col">
+        <h4>PRODUCTS</h4>
+        <ul>
+          <li><a href="pre-builts.html">Pre-Builts</a></li>
+          <li><a href="build-custom.html">Custom Build</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SUPPORT</h4>
+        <ul>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Tracking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Affiliates</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Rigstorm Labs. All rights reserved.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.youtube.com/@RigStormLabs" title="YouTube">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/rigstorm_labs/" title="Instagram">
+          <img src="/Images/ig.jpg" alt="Instagram" style="width:24px;height:24px;object-fit:contain;">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
