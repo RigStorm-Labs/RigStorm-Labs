@@ -98,22 +98,18 @@
   </div>
   
   <div class="payment-details">
-    <h3>📌 Next Steps - Payment Instructions</h3>
-    <p><strong>Please transfer the amount to the following bank account:</strong></p>
-    <div class="bank-info">
-      <p><strong>Account Holder:</strong> Rigstorm Labs</p>
-      <p><strong>Account Number:</strong> XXXX XXXX XXXX 1234</p>
-      <p><strong>IFSC Code:</strong> SBIN0001234</p>
-      <p><strong>Bank Name:</strong> State Bank of India</p>
-      <p style="margin-top:1rem; color:#ffaa00;">⚠ Contact support for complete bank details</p>
-    </div>
+    <h3>📌 Next Steps - Cash Payment</h3>
+    <p><strong>Please pay the amount in cash directly to RigStorm Labs before your order is processed.</strong></p>
     
     <p style="margin-top:1.5rem;"><strong>⚡ Important:</strong></p>
-    <p>• Please mention your <strong>Order ID: <span id="orderId2">-</span></strong> in the payment reference/note</p>
+    <p>• Please mention your <strong>Order ID: <span id="orderId2">-</span></strong> when paying</p>
     <p>• Amount to pay: <strong><span id="amount2">₹0</span></strong></p>
-    <p>• Your order is reserved for <strong>48 hours</strong> from now</p>
-    <p>• A confirmation email has been sent to <strong><span id="email2">your email</span></strong></p>
-    <p>• Expected delivery: 5-7 business days after payment confirmation</p>
+    <p>• Orders are reserved for <strong>48 hours</strong> until payment is made</p>
+    <p>• Expected delivery: 5-7 business days after cash payment confirmation</p>
+    
+    <p style="margin-top:1.5rem;"><strong>⚠ Note:</strong></p>
+    <p>• Bring the exact amount in cash.</p>
+    <p>• Your order will only be confirmed once cash is received.</p>
   </div>
   
   <div class="support-box">
@@ -153,7 +149,6 @@ function loadOrderDetails() {
   document.getElementById('amount2').textContent = `₹${parseInt(order.amount).toLocaleString('en-IN')}`;
   document.getElementById('customerName').textContent = `${order.customer.firstName} ${order.customer.lastName}`;
   document.getElementById('customerEmail').textContent = order.customer.email;
-  document.getElementById('email2').textContent = order.customer.email;
   document.getElementById('customerPhone').textContent = order.customer.phone;
   document.getElementById('customerAddress').textContent = order.customer.address;
 }
