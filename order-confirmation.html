@@ -152,21 +152,49 @@ function loadOrderDetails() {
   document.getElementById('customerPhone').textContent = order.customer.phone;
   document.getElementById('customerAddress').textContent = order.customer.address;
   
-  // Submit order to Formspree via AJAX
+  // Submit order to Formspree via AJAX with form-data for auto-reply support
+  const formData = new FormData();
+  formData.append('OrderID', order.orderId);
+  formData.append('Product', order.product.name);
+  formData.append('Amount', `₹${parseInt(order.amount).toLocaleString('en-IN')}`);
+  formData.append('CustomerName', `${order.customer.firstName} ${order.customer.lastName}`);
+  formData.append('Email', order.customer.email);
+  formData.append('Phone', order.customer.phone);
+  formData.append('DeliveryAddress', order.customer.address);
+  formData.append('PaymentMethod', 'Cash Pre-Payment (In-Person)');
+  formData.append('OrderTime', new Date().toLocaleString());
+  formData.append('_replyto', order.customer.email);
+  formData.append('_autoresponse', `Hello ${order.customer.firstName} ${order.customer.lastName},
+
+Thank you for placing your order with RigStorm Labs!
+
+Order ID: ${order.orderId}
+Product: ${order.product.name}
+Amount: ₹${parseInt(order.amount).toLocaleString('en-IN')}
+Payment Method: Cash Pre-Payment (In-Person)
+
+📌 Next Steps:
+Please pay the amount in cash directly to RigStorm Labs before your order is processed. 
+Mention your Order ID when making the payment.
+
+⚡ Important:
+- Your order is reserved for 48 hours until payment is made.
+- Your order will be delivered after parts arrive, build completion (1 day), and shipping — typically within 1–2 weeks after cash payment confirmation.
+
+🆘 Need Help?
+Email: shihabbot123@gmail.com
+Phone: +91-9865323502
+Response time: 24-48 hours
+
+Best regards,
+RigStorm Labs Team`);
+  
   fetch("https://formspree.io/f/mdayvbwo", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      OrderID: order.orderId,
-      Product: order.product.name,
-      Amount: `₹${parseInt(order.amount).toLocaleString('en-IN')}`,
-      CustomerName: `${order.customer.firstName} ${order.customer.lastName}`,
-      Email: order.customer.email,
-      Phone: order.customer.phone,
-      DeliveryAddress: order.customer.address,
-      PaymentMethod: "Cash Pre-Payment (In-Person)",
-      OrderTime: new Date().toLocaleString()
-    })
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
   }).catch(error => console.error('Formspree submission error:', error));
 }
 
