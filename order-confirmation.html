@@ -129,18 +129,6 @@
   <p>© 2026 Rigstorm Labs. All rights reserved.</p>
 </footer>
 
-<form action="https://formspree.io/f/mdayvbwo" method="POST" id="orderForm" style="display:none">
-  <input type="hidden" name="OrderID" id="formOrderId">
-  <input type="hidden" name="Product" id="formProduct">
-  <input type="hidden" name="Amount" id="formAmount">
-  <input type="hidden" name="CustomerName" id="formCustomerName">
-  <input type="hidden" name="Email" id="formEmail">
-  <input type="hidden" name="Phone" id="formPhone">
-  <input type="hidden" name="DeliveryAddress" id="formAddress">
-  <input type="hidden" name="PaymentMethod" value="Cash Pre-Payment (In-Person)">
-  <input type="hidden" name="OrderTime" id="formOrderTime">
-</form>
-
 <script>
 function loadOrderDetails() {
   const params = new URLSearchParams(window.location.search);
@@ -164,21 +152,25 @@ function loadOrderDetails() {
   document.getElementById('customerPhone').textContent = order.customer.phone;
   document.getElementById('customerAddress').textContent = order.customer.address;
   
-  // Populate Formspree hidden form
-  document.getElementById('formOrderId').value = order.orderId;
-  document.getElementById('formProduct').value = order.product.name;
-  document.getElementById('formAmount').value = `₹${parseInt(order.amount).toLocaleString('en-IN')}`;
-  document.getElementById('formCustomerName').value = `${order.customer.firstName} ${order.customer.lastName}`;
-  document.getElementById('formEmail').value = order.customer.email;
-  document.getElementById('formPhone').value = order.customer.phone;
-  document.getElementById('formAddress').value = order.customer.address;
-  document.getElementById('formOrderTime').value = new Date().toLocaleString();
+  // Submit order to Formspree via AJAX
+  fetch("https://formspree.io/f/mdayvbwo", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      OrderID: order.orderId,
+      Product: order.product.name,
+      Amount: `₹${parseInt(order.amount).toLocaleString('en-IN')}`,
+      CustomerName: `${order.customer.firstName} ${order.customer.lastName}`,
+      Email: order.customer.email,
+      Phone: order.customer.phone,
+      DeliveryAddress: order.customer.address,
+      PaymentMethod: "Cash Pre-Payment (In-Person)",
+      OrderTime: new Date().toLocaleString()
+    })
+  }).catch(error => console.error('Formspree submission error:', error));
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-  loadOrderDetails();
-  document.getElementById("orderForm").submit();
-});
+window.addEventListener('DOMContentLoaded', loadOrderDetails);
 </script>
 
 </body>
