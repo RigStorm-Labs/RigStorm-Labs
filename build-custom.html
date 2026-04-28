@@ -75,8 +75,12 @@ footer{background:#060609;border-top:1px solid rgba(0,240,255,0.1);padding:3rem 
   
   <div class="form-card">
     <div id="message" class="message"></div>
+    <p id="success-message" style="display:none;color:#00f0ff;text-align:center;font-weight:600;padding:1rem;border:1px solid #00f0ff;background:rgba(0,240,255,0.1);border-radius:4px;margin-bottom:1.5rem;">Thanks! Your custom build request has been sent.</p>
     
     <form id="buildForm" action="https://formspree.io/f/xjgjjnqq" method="POST">
+      <input type="hidden" name="_replyto" value="">
+      <input type="hidden" name="_autoresponse" value="Thank you for your custom build request! RigStorm Labs will contact you shortly.">
+      
       <div class="form-group">
         <label for="name">Name *</label>
         <input type="text" id="name" name="name" required placeholder="Enter your full name">
@@ -191,6 +195,7 @@ document.getElementById('buildForm').addEventListener('submit', function(e) {
   contactError.textContent = '';
   
   const messageDiv = document.getElementById('message');
+  const successMessage = document.getElementById('success-message');
   
   // Show loading state
   const submitBtn = this.querySelector('.submit-btn');
@@ -198,21 +203,47 @@ document.getElementById('buildForm').addEventListener('submit', function(e) {
   submitBtn.textContent = 'SENDING...';
   submitBtn.disabled = true;
   
-  // Formspree will handle the submission
-  // Show success message after brief delay
-  setTimeout(() => {
-    messageDiv.textContent = 'RigStorm Labs has received your request — we\'ll contact you soon!';
-    messageDiv.className = 'message success show';
+  // Get form data
+  const formData = new FormData(this);
+  
+  // Set _replyto to email if provided
+  if (email) {
+    formData.set('_replyto', email);
+  }
+  
+  // Send via AJAX
+  fetch('https://formspree.io/f/xjgjjnqq', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error('Network response was not ok');
+  })
+  .then(data => {
+    // Show success message
+    successMessage.style.display = 'block';
     
     // Reset form
     this.reset();
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 5000);
+  })
+  .catch(error => {
+    messageDiv.textContent = 'There was an error submitting your request. Please try again.';
+    messageDiv.className = 'message error show';
+  })
+  .finally(() => {
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
-    
-    // Hide message after 5 seconds
-    setTimeout(() => {
-      messageDiv.className = 'message';
-    }, 5000);
-  }, 1000);
+  });
 });
 </script>
