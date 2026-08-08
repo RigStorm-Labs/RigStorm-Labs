@@ -30,7 +30,8 @@ window.RigStormConfig = {
         Description: "A great balanced mid-range gaming build offering smooth 1080p and entry-level 1440p performance with efficiency and style.",
         Price: 66999,
         "Price(Slashed)": 82999,
-        Category: "Build"
+        Category: "Build",
+        ImageURL: "assets/stormcore-king.png"
       }
     ],
     guides: [

@@ -139,8 +139,14 @@
       if (hidden) hidden.value = popt.textContent.replace("In Development", "").trim();
     });
 
-    document.querySelectorAll("[data-close-modal]").forEach(b =>
-      b.addEventListener("click", close));
+    // Bind close button directly (not just data-close-modal)
+    document.getElementById("modalClose")?.addEventListener("click", close);
+    // Also re-bind after each modal open, in case innerHTML replaced it
+    const observer = new MutationObserver(() => {
+      document.getElementById("modalClose")?.addEventListener("click", close);
+    });
+    if (modalBody()) observer.observe(modalBody(), { childList: true });
+
     modalBackdrop()?.addEventListener("click", (e) => { if (e.target === modalBackdrop()) close(); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
 

@@ -23,7 +23,7 @@ upgrade.html       # Upgrade services page
 contact.html       # Contact + ecosystem links
 css/               # style.css + animations.css
 js/                # config, airtable, forms, cart, app
-assets/            # logo.svg + image assets
+assets/            # logo.png + product images
 ```
 
 ## Configuration

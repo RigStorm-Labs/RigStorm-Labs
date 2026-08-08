@@ -93,7 +93,10 @@
 
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeDrawer(); });
 
-  document.addEventListener("DOMContentLoaded", render);
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("cartClose")?.addEventListener("click", closeDrawer);
+    render();
+  });
 
   window.RigStormCart = { add, remove, clear, total, count, render, openDrawer, closeDrawer };
 })();

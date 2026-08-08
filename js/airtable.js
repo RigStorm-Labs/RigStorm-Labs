@@ -62,7 +62,7 @@
     const fb = window.RigStormConfig.fallbackProducts;
     const records = await fetchRecords();
     if (!records || !records.length) {
-      cache.builds = fb.builds.map(p => ({ ...p, ImageURL: "assets/logo.svg" }));
+      cache.builds = fb.builds.map(p => ({ ...p, ImageURL: "assets/stormcore-king.png" }));
       cache.guides = fb.guides.map(p => ({ ...p, ImageURL: null }));
       cache.all = cache.builds.concat(cache.guides);
       return cache.all;
@@ -76,7 +76,7 @@
       if (prod.Category === "Guide" || /guide/i.test(prod.Name || "")) guides.push(prod);
       else builds.push(prod);
     });
-    if (!builds.length) fb.builds.forEach(b => builds.push({ ...b, ImageURL: "assets/logo.svg" }));
+    if (!builds.length) fb.builds.forEach(b => builds.push({ ...b, ImageURL: "assets/stormcore-king.png" }));
     if (!guides.length) fb.guides.forEach(g => guides.push({ ...g, ImageURL: null }));
     cache.builds = builds;
     cache.guides = guides;

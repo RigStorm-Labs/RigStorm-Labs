@@ -168,7 +168,7 @@
     detailWrap.innerHTML = `
       <a href="builds.html" style="display:inline-block;margin-bottom:16px;color:var(--accent-2)">← Back to Builds</a>
       <div class="detail-card">
-        <div class="detail-img">🖥️</div>
+        <div class="detail-img"><img src="assets/stormcore-king.png" alt="StormCore King" loading="lazy"></div>
         <div class="detail-info">
           <div class="tier">${product.Tier || "Pre-Built"}</div>
           <h1>${product.Name}</h1>
