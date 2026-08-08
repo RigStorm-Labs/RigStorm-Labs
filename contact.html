@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-page="contact">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — RigStorm Labs</title>
+  <meta name="description" content="Get in touch with RigStorm Labs — links to the RigStorm ecosystem and social channels." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .contact-card {
+      padding: 24px; border-radius: 18px; display: flex; align-items: center; gap: 16px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border: 1px solid var(--border); backdrop-filter: blur(20px); transition: all .3s cubic-bezier(.2,.8,.2,1);
+    }
+    .contact-card:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: var(--shadow); }
+    .contact-card .ic { width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(34,211,238,0.2)); }
+    .contact-card strong { display: block; font-size: 1.05rem; margin-bottom: 2px; }
+    .contact-card a { color: var(--accent-2); font-size: 0.9rem; }
+    .social-big { display: flex; gap: 16px; justify-content: center; margin-top: 32px; }
+    .social-big a { width: 64px; height: 64px; border-radius: 16px; font-size: 1.6rem; }
+  </style>
+</head>
+<body data-page="contact">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orbs" aria-hidden="true"><span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span></div>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand"><span class="brand-text">RigStorm Labs</span></a>
+      <a href="index.html" class="nav-logo" aria-label="RigStorm Labs Home"><img src="assets/logo.svg" alt="RigStorm Labs" /></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="builds.html" class="nav-link">Builds</a>
+        <a href="repairs.html" class="nav-link">Repairs</a>
+        <a href="guides.html" class="nav-link">Guides</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="upgrade.html" class="nav-link">Upgrade</a>
+        <button class="nav-cart" id="cartBtn" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.2 14h10.06c.75 0 1.41-.41 1.75-1.03l3.27-5.94A1 1 0 0 0 21.4 5H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44A2 2 0 0 0 7 17h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L7.2 14z"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1 class="reveal">Get in <span class="grad">Touch</span></h1>
+    <p class="reveal">Reach out across the RigStorm ecosystem — we reply fast.</p>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <h2 class="section-sub" style="margin-bottom: 24px;text-align:center">Connect on social</h2>
+    <div class="social-big reveal">
+      <a href="https://instagram.com/rigstorm_labs" target="_blank" rel="noopener" aria-label="Instagram" class="social">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16m0-1.8c-3.26 0-3.67.01-4.95.07-1.28.06-2.15.27-2.91.56a5.9 5.9 0 0 0-2.13 1.39A5.9 5.9 0 0 0 .62 5.5C.33 6.26.12 7.13.06 8.41.01 9.69 0 10.1 0 13.36s.01 3.67.07 4.95c.06 1.28.27 2.15.56 2.91a5.9 5.9 0 0 0 1.39 2.13 5.9 5.9 0 0 0 2.13 1.39c.76.29 1.63.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.28-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.39 5.9 5.9 0 0 0 1.39-2.13c.29-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.39-2.13A5.9 5.9 0 0 0 19.86 1C19.1.71 18.23.5 16.95.44 15.67.38 15.26.37 12 .37zm0 4.86a6.34 6.34 0 1 0 0 12.68 6.34 6.34 0 0 0 0-12.68zm0 10.46a4.12 4.12 0 1 1 0-8.24 4.12 4.12 0 0 1 0 8.24zm6.56-10.72a1.48 1.48 0 1 0 0 2.96 1.48 1.48 0 0 0 0-2.96z"/></svg>
+      </a>
+      <a href="https://youtube.com/@RigStormLabs" target="_blank" rel="noopener" aria-label="YouTube" class="social">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.11-2.13C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.39.52A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.11 2.13C4.5 20.45 12 20.45 12 20.45s7.5 0 9.39-.52a3 3 0 0 0 2.11-2.13C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+      </a>
+    </div>
+
+    <h2 class="section-title" style="margin-top:70px;text-align:center">The <span class="grad">RigStorm Ecosystem</span></h2>
+    <p class="section-sub" style="margin-bottom:32px">Explore the wider RigStorm network of products and platforms.</p>
+    <div class="contact-grid">
+      <a class="contact-card reveal" href="https://www.rigstormsitemarket.linkpc.net" target="_blank" rel="noopener">
+        <div class="ic">🛒</div><div><strong>RigStorm SiteMarket</strong><span>www.rigstormsitemarket.linkpc.net</span></div>
+      </a>
+      <a class="contact-card reveal" href="https://www.landaura.run.place" target="_blank" rel="noopener">
+        <div class="ic">🌌</div><div><strong>RigStorm LandAura</strong><span>www.landaura.run.place</span></div>
+      </a>
+      <a class="contact-card reveal" href="https://www.zeyora.run.place" target="_blank" rel="noopener">
+        <div class="ic">💧</div><div><strong>RigStorm Zeyora</strong><span>www.zeyora.run.place</span></div>
+      </a>
+      <a class="contact-card reveal" href="https://www.adstorm.run.place" target="_blank" rel="noopener">
+        <div class="ic">📣</div><div><strong>AdStorm</strong><span>www.adstorm.run.place</span></div>
+      </a>
+      <a class="contact-card reveal" href="https://www.skyed.run.place" target="_blank" rel="noopener">
+        <div class="ic">🎓</div><div><strong>SkyED</strong><span>www.skyed.run.place</span></div>
+      </a>
+    </div>
+
+    <div class="cta-banner reveal" style="margin-top:60px">
+      <div>
+        <h2>Ready to <span class="grad">build?</span></h2>
+        <p>Start a custom build request or reach out via social — we reply fast.</p>
+      </div>
+      <button class="btn btn-primary glow" data-open-form="custom-build">Build Your PC</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo"><img src="assets/logo.svg" alt="RigStorm Labs" /><span>RigStorm Labs</span></a>
+        <p class="footer-tag">High-performance gaming rigs, repairs, upgrades and guides — engineered in the dark.</p>
+        <div class="social-row">
+          <a href="https://instagram.com/rigstorm_labs" target="_blank" rel="noopener" aria-label="Instagram" class="social"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16m0-1.8c-3.26 0-3.67.01-4.95.07-1.28.06-2.15.27-2.91.56a5.9 5.9 0 0 0-2.13 1.39A5.9 5.9 0 0 0 .62 5.5C.33 6.26.12 7.13.06 8.41.01 9.69 0 10.1 0 13.36s.01 3.67.07 4.95c.06 1.28.27 2.15.56 2.91a5.9 5.9 0 0 0 1.39 2.13 5.9 5.9 0 0 0 2.13 1.39c.76.29 1.63.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.28-.06 2.15-.27 2.91-.56a5.9 5.9 0 0 0 2.13-1.39 5.9 5.9 0 0 0 1.39-2.13c.29-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.27-2.15-.56-2.91a5.9 5.9 0 0 0-1.39-2.13A5.9 5.9 0 0 0 19.86 1C19.1.71 18.23.5 16.95.44 15.67.38 15.26.37 12 .37zm0 4.86a6.34 6.34 0 1 0 0 12.68 6.34 6.34 0 0 0 0-12.68zm0 10.46a4.12 4.12 0 1 1 0-8.24 4.12 4.12 0 0 1 0 8.24zm6.56-10.72a1.48 1.48 0 1 0 0 2.96 1.48 1.48 0 0 0 0-2.96z"/></svg></a>
+          <a href="https://youtube.com/@RigStormLabs" target="_blank" rel="noopener" aria-label="YouTube" class="social"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.11-2.13C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.39.52A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.11 2.13C4.5 20.45 12 20.45 12 20.45s7.5 0 9.39-.52a3 3 0 0 0 2.11-2.13C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="builds.html">Builds</a></li><li><a href="repairs.html">Repairs</a></li><li><a href="guides.html">Guides</a></li><li><a href="upgrade.html">Upgrade</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Ecosystem</h4><ul><li><a href="https://www.rigstormsitemarket.linkpc.net" target="_blank" rel="noopener">RigStorm SiteMarket</a></li><li><a href="https://www.landaura.run.place" target="_blank" rel="noopener">RigStorm LandAura</a></li><li><a href="https://www.zeyora.run.place" target="_blank" rel="noopener">RigStorm Zeyora</a></li><li><a href="https://www.adstorm.run.place" target="_blank" rel="noopener">AdStorm</a></li><li><a href="https://www.skyed.run.place" target="_blank" rel="noopener">SkyED</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://instagram.com/rigstorm_labs" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://youtube.com/@RigStormLabs" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> RigStorm Labs. Built for the dark side of performance.</span></div>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="modal-body" id="modalBody"></div></div>
+  </div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-head"><h3>Your Cart</h3><button class="modal-close" id="cartClose" aria-label="Close">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot"><div class="cart-total">Total: <strong id="cartTotal">₹0</strong></div><button class="btn btn-primary glow" id="cartCheckout" disabled>Checkout</button></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/airtable.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
