@@ -10,7 +10,7 @@ backend:
   name: github
   repo: "RigStorm-Labs/RigStorm-Labs"
   branch: main
-  base_url: https://rigstorm-decap-oauth.YOUR-ACCOUNT.workers.dev # TODO: replace YOUR-ACCOUNT with your workers.dev subdomain after deploying oauth-worker/
+  base_url: https://rigstorm-decap-oauth.shihabbot123.workers.dev
   auth_endpoint: auth
 local_backend: true
 media_folder: "assets/uploads"
