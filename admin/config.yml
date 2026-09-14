@@ -1,0 +1,82 @@
+# RigStorm Labs — Decap CMS configuration
+#
+# HOW TO MAKE THIS WORK (pick one):
+# A) GitHub (production): set `repo` below to your repo, e.g. "myuser/RigStorm-Labs".
+#    Then put the site behind Decap's GitHub OAuth: either host on Netlify
+#    (Site settings > Access control > OAuth, backend stays "github"), or run the
+#    official OAuth proxy (decap-oauth-provider on Cloudflare Workers) and add
+#    `base_url: https://your-oauth-proxy.workers.dev` under `backend`.
+# B) Local editing (easiest to test now): run `npx decap-server` in the project
+#    folder, then open /admin — `local_backend: true` below enables it.
+# The old `git-gateway` backend was removed because it only works on Netlify
+# with Identity enabled, which is why /admin showed an error.
+backend:
+  name: github
+  repo: "USERNAME/RigStorm-Labs" # TODO: replace with your GitHub user/repo
+  branch: main
+local_backend: true
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# YES — you can add, edit AND delete products, change prices, add repair
+# services and guides. Each list below supports [+ Add], edit, delete and
+# drag-to-reorder. Saving writes straight to the JSON files the website reads,
+# so changes go live on the next deploy (or instantly with local dev).
+collections:
+  - name: "catalogue"
+    label: "Catalogue"
+    files:
+      - label: "Products"
+        name: "products"
+        file: "content/products.json"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} — ₹{{fields.price}} ({{fields.category}})"
+            fields:
+              - { label: "ID", name: "id", widget: "string", hint: "Unique, lowercase, no spaces — e.g. stormcore-king" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Tier", name: "tier", widget: "string", required: false }
+              - { label: "Specs", name: "specs", widget: "text" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Price (INR)", name: "price", widget: "number", value_type: "int" }
+              - { label: "Price Slashed (optional)", name: "priceSlashed", widget: "number", required: false, value_type: "int" }
+              - { label: "Category", name: "category", widget: "select", options: ["Build", "Guide"] }
+              - { label: "Image", name: "image", widget: "image", required: false }
+      - label: "Repair Services"
+        name: "repairs"
+        file: "content/repairs.json"
+        fields:
+          - label: "Services"
+            name: "repairs"
+            widget: "list"
+            summary: "{{fields.name}} — ₹{{fields.price}}"
+            fields:
+              - { label: "Service Name", name: "name", widget: "string" }
+              - { label: "Price (INR — empty = custom quote)", name: "price", widget: "number", required: false, value_type: "int" }
+              - { label: "Original Price (optional)", name: "original", widget: "number", required: false, value_type: "int" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icon (emoji)", name: "icon", widget: "string", required: false }
+      - label: "Guides"
+        name: "guides"
+        file: "content/guides.json"
+        fields:
+          - label: "Guides"
+            name: "guides"
+            widget: "list"
+            summary: "{{fields.name}} — ₹{{fields.price}}"
+            fields:
+              - { label: "Guide Name", name: "name", widget: "string" }
+              - { label: "Price (INR)", name: "price", widget: "number", value_type: "int" }
+              - { label: "Specs", name: "specs", widget: "string", default: "Digital Download" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Delivery Method", name: "delivery", widget: "string", default: "Email reply after payment" }
+      - label: "Form Endpoints"
+        name: "forms"
+        file: "content/settings/forms.json"
+        fields:
+          - { label: "Custom Build Endpoint", name: "form_endpoint_custom", widget: "string" }
+          - { label: "Buy Now Endpoint", name: "form_endpoint_buy", widget: "string" }
+          - { label: "Repair Endpoint", name: "form_endpoint_repair", widget: "string" }
+          - { label: "Upgrade Endpoint", name: "form_endpoint_upgrade", widget: "string" }

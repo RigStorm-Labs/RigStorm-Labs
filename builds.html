@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Builds — RigStorm Labs</title>
+<meta name="description" content="Pre-configured gaming rigs from RigStorm Labs — inspected, benchmarked and ready to ship.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:ital,wght@0,400;0,450;0,550;0,650;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animations.css">
+</head>
+<body id="top">
+<header class="site-nav"><div class="nav-inner">
+<a class="brand" href="index.html"><img src="assets/logo.png" alt="RigStorm Labs logo"><span>RIGSTORM LABS.</span></a>
+<nav class="nav-links" aria-label="Primary"><a data-nav href="builds.html">Builds</a><a data-nav href="repairs.html">Repairs</a><a data-nav href="guides.html">Guides</a><a data-nav href="upgrade.html">Upgrade</a><a data-nav href="contact.html">Contact</a></nav>
+<div class="nav-cta"><button class="cart-btn" data-open-cart>Cart <span data-cart-count></span></button><a class="btn btn-solid" href="index.html#start">Start a build <span class="arr">↗</span></a><button class="burger" id="burger" aria-label="Menu">☰</button></div></div>
+<nav class="mobile-menu" id="mobileMenu"><a href="builds.html">Builds</a><a href="repairs.html">Repairs</a><a href="guides.html">Guides</a><a href="upgrade.html">Upgrade</a><a href="contact.html">Contact</a><a href="index.html#start">Start a build ↗</a></nav></header>
+<main>
+<section class="hero wrap"><p class="breadcrumb"><a href="index.html">Home</a> / Builds</p>
+<p class="eyebrow">Pre-built systems</p>
+<h1 class="display">Builds that<br><em>earn it.</em></h1>
+<p class="lede" style="margin-top:20px">Pre-configured gaming rigs — inspected and ready. New products are added via the CMS; listings below always reflect the live catalogue.</p></section>
+<section class="section wrap" style="padding-top:0"><div class="section-head"><span class="sec-num">01</span><span class="sec-label">All builds</span></div>
+<div class="card-grid" data-builds-grid><p class="lede">Loading builds…</p></div>
+<div class="panel-dark reveal" style="margin-top:26px"><p class="eyebrow on-dark">Need something else?</p>
+<h3 class="display-sm" style="color:var(--on-dark);font-size:clamp(1.8rem,4vw,2.8rem)">Nothing fits? <em>We build to order.</em></h3>
+<div class="hero-actions"><a class="btn btn-light" href="index.html#start">Start a custom build <span class="arr">↗</span></a><a class="btn btn-ghost" style="color:var(--on-dark);border-color:var(--line-dark)" href="upgrade.html">Talk upgrades →</a></div></div>
+</section></main>
+<footer><div class="wrap foot-top"><a href="#top" style="text-decoration:none;color:inherit"><p class="foot-word">RIGSTORM<br><em>LABS.</em></p></a>
+<p class="lede" style="color:var(--on-dark-2);margin-top:14px">High-performance gaming rigs, repairs, upgrades and guides — engineered in the dark.</p>
+<div class="foot-grid"><div><h4>Pages</h4><a href="builds.html">Builds</a><a href="repairs.html">Repairs</a><a href="guides.html">Guides</a><a href="upgrade.html">Upgrade</a><a href="contact.html">Contact</a></div>
+<div><h4>Services</h4><a href="builds.html">Custom builds</a><a href="upgrade.html">Upgrades &amp; tuning</a><a href="repairs.html">Care &amp; repairs</a><a href="guides.html">Digital guides</a></div>
+<div><h4>Ecosystem</h4><a href="https://www.rigstormsitemarket.linkpc.net" target="_blank" rel="noopener">Site Market ↗</a><a href="https://www.landaura.run.place" target="_blank" rel="noopener">Land Aura ↗</a><a href="https://www.zeyora.run.place" target="_blank" rel="noopener">Zeyora ↗</a><a href="https://www.adstorm.run.place" target="_blank" rel="noopener">Ad Storm ↗</a><a href="https://www.skyed.run.place" target="_blank" rel="noopener">Sky Ed ↗</a></div>
+<div><h4>Social</h4><a href="https://instagram.com/rigstorm_labs" target="_blank" rel="noopener">Instagram ↗</a><a href="https://youtube.com/@RigStormLabs" target="_blank" rel="noopener">YouTube ↗</a><a href="contact.html">Contact ↗</a></div></div>
+<div class="foot-base"><span>© 2026 RigStorm Labs</span><span>Built for the dark side of performance.</span><a href="#top" style="color:inherit">Back to top ↑</a></div></div></footer>
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Cart"><div class="cart-head"><strong>Your cart</strong><button class="cart-btn" id="cartClose">Close ×</button></div>
+<div class="cart-items" id="cartItems"></div><div class="cart-foot" id="cartFoot"><div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div>
+<button class="btn btn-solid" id="checkoutBtn" style="width:100%;justify-content:center">Request checkout <span class="arr">↗</span></button>
+<p class="hint">Checkout sends your cart for confirmation. Payment: Pre-Paid Cash.</p><div class="form-ok" id="cartMsg" role="status"></div></div></aside>
+<script src="js/config.js"></script><script src="js/cart.js"></script><script src="js/forms.js"></script><script src="js/app.js"></script>
+</body></html>

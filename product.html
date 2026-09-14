@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product — RigStorm Labs</title>
+<meta name="description" content="Build details, specs, benchmarks and game performance.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:ital,wght@0,400;0,450;0,550;0,650;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animations.css">
+</head>
+<body id="top">
+<header class="site-nav"><div class="nav-inner">
+<a class="brand" href="index.html"><img src="assets/logo.png" alt="RigStorm Labs logo"><span>RIGSTORM LABS.</span></a>
+<nav class="nav-links" aria-label="Primary"><a data-nav href="builds.html">Builds</a><a data-nav href="repairs.html">Repairs</a><a data-nav href="guides.html">Guides</a><a data-nav href="upgrade.html">Upgrade</a><a data-nav href="contact.html">Contact</a></nav>
+<div class="nav-cta"><button class="cart-btn" data-open-cart>Cart <span data-cart-count></span></button><a class="btn btn-solid" href="index.html#start">Start a build <span class="arr">↗</span></a><button class="burger" id="burger" aria-label="Menu">☰</button></div></div>
+<nav class="mobile-menu" id="mobileMenu"><a href="builds.html">Builds</a><a href="repairs.html">Repairs</a><a href="guides.html">Guides</a><a href="upgrade.html">Upgrade</a><a href="contact.html">Contact</a></nav></header>
+<main>
+<section class="hero wrap" id="productDetail">
+<p class="breadcrumb"><a href="index.html">Home</a> / <a href="builds.html">Builds</a> / <span data-p-name>Product</span></p>
+<p class="eyebrow" data-p-tier>Build</p>
+<h1 class="display-sm" data-p-name style="font-size:clamp(2.6rem,7vw,5.5rem)">Product</h1>
+<div class="detail-grid" style="margin-top:30px">
+<div class="build-visual" style="border-radius:var(--radius)"><figure class="pc-photo" style="margin:0"><img data-p-img src="assets/stormcore-king.jpg" alt="Product image" loading="lazy"></figure>
+<div><p class="eyebrow on-dark">Technical specifications</p><p class="lede" style="color:var(--on-dark);margin-top:10px" data-p-specs></p></div></div>
+<div><p class="lede" data-p-desc></p>
+<div class="price-line"><span class="price-now" data-p-price></span><span class="price-was" data-p-was></span></div>
+<div class="hero-actions"><button class="btn btn-solid" data-p-add>Add to cart +</button><a class="btn btn-ghost" href="builds.html">← All builds</a></div>
+<dl style="margin-top:26px"><div class="kv"><dt>Category</dt><dd data-p-tier></dd></div>
+<div class="kv"><dt>Delivery</dt><dd>Confirmed after order request. Payment: Pre-Paid Cash.</dd></div>
+<div class="kv"><dt>Support</dt><dd>Use the contact form for questions about this item.</dd></div></dl>
+<div class="form-shell" style="grid-template-columns:1fr;margin-top:26px"><form id="buyForm" action="https://formspree.io/f/mdayvbwo" method="POST">
+<p class="eyebrow">Buy now — request this item</p>
+<input type="hidden" name="item" data-buy-item value="">
+<div class="field"><label class="flabel" for="b-name">Your name *</label><input id="b-name" name="customer_name" type="text" required></div>
+<div class="field"><label class="flabel" for="b-contact">Email or phone *</label><input id="b-contact" name="contact" type="text" data-contact required></div>
+<div class="field"><label class="flabel" for="b-addr">Address (optional)</label><textarea id="b-addr" name="address" style="min-height:70px"></textarea></div>
+<button class="btn btn-solid" type="submit">Request to buy <span class="arr">↗</span></button>
+<div class="form-ok" role="status"></div><div class="form-err" role="alert"></div></form></div>
+</div></div></section></main>
+<footer><div class="wrap foot-top"><p class="foot-word">RIGSTORM<br><em>LABS.</em></p>
+<div class="foot-grid"><div><h4>Pages</h4><a href="builds.html">Builds</a><a href="repairs.html">Repairs</a><a href="guides.html">Guides</a><a href="upgrade.html">Upgrade</a><a href="contact.html">Contact</a></div>
+<div><h4>Services</h4><a href="builds.html">Custom builds</a><a href="upgrade.html">Upgrades</a><a href="repairs.html">Repairs</a><a href="guides.html">Guides</a></div>
+<div><h4>Ecosystem</h4><a href="https://www.rigstormsitemarket.linkpc.net" target="_blank" rel="noopener">Site Market ↗</a><a href="https://www.landaura.run.place" target="_blank" rel="noopener">Land Aura ↗</a><a href="https://www.zeyora.run.place" target="_blank" rel="noopener">Zeyora ↗</a><a href="https://www.adstorm.run.place" target="_blank" rel="noopener">Ad Storm ↗</a><a href="https://www.skyed.run.place" target="_blank" rel="noopener">Sky Ed ↗</a></div>
+<div><h4>Social</h4><a href="https://instagram.com/rigstorm_labs" target="_blank" rel="noopener">Instagram ↗</a><a href="https://youtube.com/@RigStormLabs" target="_blank" rel="noopener">YouTube ↗</a></div></div>
+<div class="foot-base"><span>© 2026 RigStorm Labs</span><span>Built for the dark side of performance.</span><a href="#top" style="color:inherit">Back to top ↑</a></div></div></footer>
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Cart"><div class="cart-head"><strong>Your cart</strong><button class="cart-btn" id="cartClose">Close ×</button></div>
+<div class="cart-items" id="cartItems"></div><div class="cart-foot" id="cartFoot"><div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div>
+<button class="btn btn-solid" id="checkoutBtn" style="width:100%;justify-content:center">Request checkout <span class="arr">↗</span></button><div class="form-ok" id="cartMsg" role="status"></div></div></aside>
+<script src="js/config.js"></script><script src="js/cart.js"></script><script src="js/forms.js"></script><script src="js/app.js"></script>
+</body></html>

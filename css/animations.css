@@ -1,0 +1,18 @@
+/* RigStorm Labs — restrained motion */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-line{position:relative}
+@keyframes riseIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero .display,.hero .lede,.hero .hero-actions{animation:riseIn .8s cubic-bezier(.2,.8,.2,1) both}
+.hero .lede{animation-delay:.12s}
+.hero .hero-actions{animation-delay:.22s}
+.row .go{transition:background .22s ease,color .22s ease,transform .22s ease}
+.row:hover .go{transform:translate(2px,-2px)}
+.card,.eco-grid a{transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.marquee{overflow:hidden;white-space:nowrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.marquee-track{display:inline-block;padding:13px 0;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);animation:scrollX 30s linear infinite}
+@keyframes scrollX{from{transform:translateX(0)}to{transform:translateX(-50%)}}
