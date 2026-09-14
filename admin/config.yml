@@ -1,19 +1,17 @@
 # RigStorm Labs — Decap CMS configuration
 #
-# HOW TO MAKE THIS WORK (pick one):
-# A) GitHub (production): set `repo` below to your repo, e.g. "myuser/RigStorm-Labs".
-#    Then put the site behind Decap's GitHub OAuth: either host on Netlify
-#    (Site settings > Access control > OAuth, backend stays "github"), or run the
-#    official OAuth proxy (decap-oauth-provider on Cloudflare Workers) and add
-#    `base_url: https://your-oauth-proxy.workers.dev` under `backend`.
-# B) Local editing (easiest to test now): run `npx decap-server` in the project
-#    folder, then open /admin — `local_backend: true` below enables it.
-# The old `git-gateway` backend was removed because it only works on Netlify
-# with Identity enabled, which is why /admin showed an error.
+# Production auth (GitHub Pages host + GitHub backend + Cloudflare Worker OAuth):
+#   Decap opens {base_url}/auth, GitHub redirects to {base_url}/callback,
+#   the Worker in oauth-worker/ exchanges the code server-side and posts the
+#   token back to Decap. Client secret lives ONLY in Worker secrets, never here.
+# Local editing: run `npx decap-server` in the project folder, then open /admin
+#   — `local_backend: true` below enables it (production login is unaffected).
 backend:
   name: github
-  repo: "USERNAME/RigStorm-Labs" # TODO: replace with your GitHub user/repo
+  repo: "RigStorm-Labs/RigStorm-Labs"
   branch: main
+  base_url: https://rigstorm-decap-oauth.YOUR-ACCOUNT.workers.dev # TODO: replace YOUR-ACCOUNT with your workers.dev subdomain after deploying oauth-worker/
+  auth_endpoint: auth
 local_backend: true
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"

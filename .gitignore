@@ -1,0 +1,5 @@
+# Local secret overrides for `wrangler dev` (never commit real values).
+.dev.vars
+# Wrangler / Node artifacts.
+.wrangler/
+node_modules/

@@ -1,0 +1,13 @@
+# rigstorm-decap-oauth — Cloudflare Worker OAuth proxy for Decap CMS.
+# Deploy:  npx wrangler deploy   (run inside oauth-worker/)
+# Secrets (NEVER put values in this file):
+#   npx wrangler secret put OAUTH_CLIENT_ID
+#   npx wrangler secret put OAUTH_CLIENT_SECRET
+name = "rigstorm-decap-oauth"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+OAUTH_PROVIDER = "github"
+SCOPES = "repo,user"
+ALLOWED_ORIGINS = "https://rigstorm-labs.github.io"
