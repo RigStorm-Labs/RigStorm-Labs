@@ -1,1 +1,37 @@
-{"products":[{"category":"Build","description":"Balanced mid-range gaming build offering smooth 1080p and entry-level 1440p performance.","id":"stormcore-king","image":"assets/stormcore-king.jpg","name":"StormCore King","price":66999,"priceSlashed":82999,"specs":"Ryzen 5 5500, RX 7600 8GB, 16GB DDR4-3200, 512GB NVMe SSD, 650W PSU, ANT eSports Crystal Z2 Case","tier":"Mid-Range"},{"category":"Guide","description":"Complete step-by-step guide, component selection tips, assembly instructions. Delivered by email reply after payment.","id":"pc-building-guide","image":"assets/logo.png","name":"PC Building Guide","price":500,"priceSlashed":null,"specs":"Digital Download","tier":"Digital"}]}
+{
+  "products": [
+    {
+      "tier": "Mid-Range",
+      "price": 66999,
+      "name": "StormCore King",
+      "priceSlashed": 82999,
+      "specs": "Ryzen 5 5500, RX 7600 8GB, 16GB DDR4-3200, 512GB NVMe SSD, 650W PSU, ANT eSports Crystal Z2 Case",
+      "id": "stormcore-king",
+      "image": "assets/stormcore-king.jpg",
+      "description": "Balanced mid-range gaming build offering smooth 1080p and entry-level 1440p performance.",
+      "category": "Build"
+    },
+    {
+      "tier": "Digital",
+      "price": 500,
+      "name": "PC Building Guide",
+      "priceSlashed": null,
+      "specs": "Digital Download",
+      "id": "pc-building-guide",
+      "image": "assets/logo.png",
+      "description": "Complete step-by-step guide, component selection tips, assembly instructions. Delivered by email reply after payment.",
+      "category": "Guide"
+    },
+    {
+      "tier": "Lower Mid-Range",
+      "price": 57990,
+      "name": "StormCore Scythe",
+      "priceSlashed": 69990,
+      "specs": "Ryzen 5 5500, RTX 3050 8GB, 16GB DDR4-3200, 512GB NVMe SSD, 650W PSU, ANT eSports Crystal Z2 Case",
+      "id": "stormcore-scythe",
+      "image": "/assets/uploads/stormcore-scythe.png",
+      "description": "Budget mid-range gaming build offering smooth 1080p performance in AAA titles.",
+      "category": "Build"
+    }
+  ]
+}
